@@ -3,7 +3,6 @@ fetch("data.json")
   .then((response) => response.json())
   .then((data) => {
     // Use the data
-    console.log(data)
     handleData(data)
   })
   .catch((error) => console.error("Error:", error))
@@ -58,7 +57,7 @@ const categoryListItems = categories.map(category => `<li><button>${category}</b
 
 // insert the list items into the unordered list into the HTML
 document.querySelector('.categories ul').innerHTML = categoryListItems;
-console.log(dishes)
+
   }
 
 
