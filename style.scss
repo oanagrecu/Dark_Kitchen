@@ -32,8 +32,12 @@ p {
 header {
   nav {
     display: flex;
-
+    justify-content: space-between;
+    div {
+      display: flex;
+    }
     .price-expanded {
+      display: none;
     }
   }
 }
@@ -51,4 +55,9 @@ body {
 
 li {
   list-style-type: none;
+}
+
+.card {
+  background: $card-light;
+  border-radius: 10px;
 }

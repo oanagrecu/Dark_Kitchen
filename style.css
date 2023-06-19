@@ -9,7 +9,12 @@ p {
   font-family: "Libre Franklin"; }
 
 header nav {
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
+  header nav div {
+    display: flex; }
+  header nav .price-expanded {
+    display: none; }
 
 body {
   background: #ffefdb; }
@@ -22,5 +27,9 @@ body {
 
 li {
   list-style-type: none; }
+
+.card {
+  background: #ffcc00;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
