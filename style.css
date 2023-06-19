@@ -72,7 +72,9 @@ li {
     background: #ffcc00;
     border-radius: 10px;
     min-width: 300px;
-    max-width: 400px; }
+    max-width: 400px;
+    padding: 1em;
+    margin-bottom: 1em; }
 
 .card-expander {
   width: 100%;

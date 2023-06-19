@@ -103,11 +103,14 @@ li {
   flex: 1 1 calc(60% - 4em);
   border: 1px dotted black;
   gap: 1em;
+
   .card {
     background: $card-light;
     border-radius: 10px;
     min-width: 300px;
     max-width: 400px;
+    padding: 1em;
+    margin-bottom: 1em;
   }
 }
 .card-expander {
