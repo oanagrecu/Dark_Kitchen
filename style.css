@@ -2,8 +2,23 @@
   --font-fraunces: 'Fraunces', serif;
   --font-libre: 'Libre Franklin', sans-serif; }
 
+html {
+  font-family: "Fraunces"; }
+
+p {
+  font-family: "Libre Franklin"; }
+
+header nav {
+  display: flex; }
+
 body {
   background: #ffefdb; }
+  body main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
+    body main .content {
+      display: flex; }
 
 li {
   list-style-type: none; }

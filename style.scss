@@ -3,6 +3,8 @@
   --font-libre: 'Libre Franklin', sans-serif;
 }
 
+$sans-serif: 'Libre Franklin';
+$serif: 'Fraunces';
 $bg-light: #ffefdb;
 $title-light: #742b26;
 $text-light: #81756e;
@@ -16,11 +18,34 @@ $text-dark: #81756e;
 $card-dark: #4e2c1c;
 
 html {
+  font : {
+    family: $serif;
+  }
 }
 
+p {
+  font : {
+    family: $sans-serif;
+  }
+}
+
+header {
+  nav {
+    display: flex;
+
+    .price-expanded {
+    }
+  }
+}
 body {
   background: $bg-light;
-  section {
+  main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .content {
+      display: flex;
+    }
   }
 }
 
