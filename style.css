@@ -1,7 +1,9 @@
-:root {
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; }
+
+:root {
   --font-fraunces: 'Fraunces', serif;
   --font-libre: 'Libre Franklin', sans-serif; }
 
