@@ -126,7 +126,6 @@ li {
   display: flex;
   flex-flow: row wrap;
   flex: 1 1 calc(60% - 4em);
-  border: 1px dotted black;
   padding: 1em;
   gap: 1em;
 
@@ -190,6 +189,23 @@ li {
   flex: 1 1 calc(40% - 4em);
 }
 
+#side-view {
+  padding: 1em;
+  position: fixed;
+  margin-top: -3rem;
+  .big-description {
+    font-family: $serif;
+    font-size: 1.2rem;
+    color: $title-light;
+    text-align: center;
+    padding: 1em;
+  }
+  img {
+    margin: 1em;
+    width: calc(100% - 2em);
+    border-radius: 10px;
+  }
+}
 // import mediaqueries
 @import 'mediaqueries';
 @import 'oanastyle';
