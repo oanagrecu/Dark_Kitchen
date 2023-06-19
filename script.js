@@ -49,8 +49,8 @@ function createDishCard(dish) {
 // Add event listeners to the category filters
 document.querySelectorAll("nav ul button").forEach((button) => {
   button.addEventListener("click", () => {
-    const category = button.dataset.category
-    document.querySelectorAll("#menu .card").forEach((card) => {
+    const category = button.data.category
+    document.querySelectorAll(".card").forEach((card) => {
       card.style.display = card.dataset.category === category ? "" : "none"
     })
   })
