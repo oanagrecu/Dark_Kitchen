@@ -33,8 +33,7 @@ function createDishCard(dish) {
       <ul class="cathegories">
         <li>${dish.category}</li>
       </ul>
-      <span class="price-item"> ${dish.price}</span>
-      <button>ADD</button>
+      <button class="price-item">${dish.price}</button>
     </div>
   </div>
   <aside class="card-expander">
