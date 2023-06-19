@@ -42,38 +42,64 @@ function createDishCard(dish) {
   </p>
   </aside>
   `
-    return card
+  return card
+}
+
+
+
+
+// Getting the categories from the dishes
+function getCategories(dishes) {
+   // get unique categories from dishes
+const categories = getCategories(dishes);
+
+// create a list item for each category and join them into a single HTML string
+const categoryListItems = categories.map(category => `<li><button>${category}</button></li>`).join('');
+
+// insert the list items into the unordered list into the HTML
+document.querySelector('.categories ul').innerHTML = categoryListItems;
+console.log(dishes)
   }
 
-// Add event listeners to the category filters
-document.querySelectorAll("nav ul button").forEach((button) => {
-  button.addEventListener("click", () => {
-    const category = button.data.category
-    document.querySelectorAll(".card").forEach((card) => {
-      card.style.display = card.dataset.category === category ? "" : "none"
-    })
-  })
-})
 
-///getting the dishes from the ////
-function getCategories(dishes) {
-  return [...new Set(dishes.map((dish) => dish.category))]
-}
+  
+  // Add event listeners to the category filters
+  document.querySelectorAll(".categories ul li button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const category = button.dataset.category;
+      document.querySelectorAll(".card").forEach((card) => {
+        card.style.display = card.dataset.category === category ? " " : "none";
+      });
+    });
+  });
+  
+
+// Create a "All Categories" button
+const showAllButton = document.createElement('button');
+showAllButton.innerText = 'All Categoties';
+showAllButton.addEventListener('click', () => {
+  // Show all cards when the "Show All" button is clicked
+  document.querySelectorAll('.card').forEach((card) => {
+    card.style.display = '';
+  });
+});
+
+// Add the "Show All" button to the list of category buttons
+document.querySelector('.categories ul').appendChild(showAllButton);
+
 
 ///////////// dark mode toggle /////
 
+const darkModeSelect = document.getElementById("toggle-mode")
+darkModeSelect.addEventListener("click", function () {
+  var body = document.body
 
-  const darkModeSelect = document.getElementById("toggle-mode");
-  darkModeSelect.addEventListener("click", function () {
-    var body = document.body;
-  
-    // Toggle the theme classes on the body
-    body.classList.toggle("dark-theme");
-    body.classList.toggle("light-theme");
-  
-    // Toggle the button text
-    var currentTheme = darkModeSelect.textContent;
-    var newTheme = currentTheme === "DARK" ? "LIGHT" : "DARK";
-    darkModeSelect.textContent = newTheme;
-  });
+  // Toggle the theme classes on the body
+  body.classList.toggle("dark-theme")
+  body.classList.toggle("light-theme")
 
+  // Toggle the button text
+  var currentTheme = darkModeSelect.textContent
+  var newTheme = currentTheme === "DARK" ? "LIGHT" : "DARK"
+  darkModeSelect.textContent = newTheme
+})
