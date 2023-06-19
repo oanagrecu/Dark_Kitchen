@@ -9,7 +9,12 @@ p {
   font-family: "Libre Franklin"; }
 
 header nav {
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
+  header nav div {
+    display: flex; }
+  header nav .price-expanded {
+    display: none; }
 
 body {
   background: #ffefdb; }
@@ -18,9 +23,22 @@ body {
     flex-flow: row wrap;
     justify-content: center; }
     body main .content {
-      display: flex; }
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center; }
 
 li {
   list-style-type: none; }
+
+.search-bar {
+  flex: 1 1 100%;
+  width: 100%; }
+
+.card-container {
+  width: 100%;
+  border: 1px dotted black; }
+  .card-container .card {
+    background: #ffcc00;
+    border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
