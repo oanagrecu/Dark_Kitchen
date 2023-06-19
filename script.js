@@ -1,4 +1,4 @@
-////// getting the data from the json////// 
+////// getting the data from the json//////
 fetch("data.json")
   .then((response) => response.json())
   .then((data) => {
@@ -8,22 +8,19 @@ fetch("data.json")
   })
   .catch((error) => console.error("Error:", error))
 function handleData(data) {
-
-  ////Insert dishes into the menu
+  ////insert dishes into the menu
   const menu = document.getElementById("menu")
   data.dishes.forEach((dish) => menu.appendChild(createDishCard(dish)))
 }
 
-
 ////create a card for each dish from data ////
 function createDishCard(dish) {
-    const card = document.createElement("div")
-    card.classList.add("card")
-    card.dataset.id = dish.id
-    card.dataset.category = dish.category
-    card.innerHTML = `
-  
-     <div class="card">
+  const card = document.createElement("div")
+  card.classList.add("card")
+  card.dataset.id = dish.id
+  card.dataset.category = dish.category
+  card.innerHTML = `
+     <div class="top-card">
     <div class="left">
       <h3>${dish.name}</h3>
       <img src="${dish.picture}" alt="preview menu item" />
@@ -46,5 +43,20 @@ function createDishCard(dish) {
   </p>
   </aside>
   `
-    return card
-  }
+  return card
+}
+
+// Add event listeners to the category filters
+document.querySelectorAll("nav ul button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.dataset.category
+    document.querySelectorAll("#menu .card").forEach((card) => {
+      card.style.display = card.dataset.category === category ? "" : "none"
+    })
+  })
+})
+
+///getting the dishes from the ////
+function getCategories(dishes) {
+  return [...new Set(dishes.map((dish) => dish.category))]
+}
