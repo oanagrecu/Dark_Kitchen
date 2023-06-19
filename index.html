@@ -28,17 +28,20 @@
       <nav class="mobile"></nav>
       <nav class="desktop">
         <h2>Dark Kitchen</h2>
-        <span>Last Item <span class="last-item"></span></span>
-        <h2>Total<span class="total"> € 33.36</span></h2>
-        <div class="price-expanded">
-          <h3>Your order</h3>
-          <ul>
-            <li>
-              Sushi <span class="price-item">€22 </span>
-              <span class="minus"> - </span>
-              <span class="plus"> + </span>
-            </li>
-            <li>
+
+        <div>
+          <button id="toggle-mode">DARK</button>
+          <span>Last Item <span class="last-item"></span></span>
+          <h2>Total<span class="total"> € 33.36</span></h2>
+          <div class="price-expanded">
+            <h3>Your order</h3>
+            <ul>
+              <li>
+                Sushi <span class="price-item">€22 </span>
+                <span class="minus"> - </span>
+                <span class="plus"> + </span>
+              </li>
+              <li>
                 Sushi <span class="price-item">€22 </span>
                 <span class="minus"> - </span>
                 <span class="plus"> + </span>
@@ -53,9 +56,10 @@
                 <span class="minus"> - </span>
                 <span class="plus"> + </span>
               </li>
-              <hr>
+              <hr />
               <button>CHECKOUt</button>
-          </ul>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -79,28 +83,34 @@
         <div class="card-container" id="menu">
           <!-- Dishes will be inserted here dynamically with JavaScript -->
           <div class="card">
-            <div class="left"><h3>Title</h3>
-                <img src="#" alt="preview menu item">
+            <div class="left">
+              <h3>Title</h3>
+              <img src="#" alt="preview menu item" />
             </div>
             <div class="right">
-                <span>
-                    <i class="fa-regular fa-star"></i>
-                    3.5
-                </span>
-                <ul class="cathegories">
-                    <li>italian</li>
-                    <li>vegan</li>
-                    <li>comfort</li>
-                </ul>
-                <span class="price-item"> €23</span>
-                <button>ADD</button>
+              <span>
+                <i class="fa-regular fa-star"></i>
+                3.5
+              </span>
+              <ul class="cathegories">
+                <li>italian</li>
+                <li>vegan</li>
+                <li>comfort</li>
+              </ul>
+              <span class="price-item"> €23</span>
+              <button>ADD</button>
             </div>
           </div>
-          <aside class="card-expander">
-            <p class=" description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, est reprehenderit officiis maiores id nisi, fugiat adipisci facilis commodi quasi perferendis iusto accusantium velit! Porro, aliquam! Aut quaerat illo commodi.</p>
-            <img src="#" alt="expanded image of the dish">
-          </aside>
         </div>
+        <aside class="card-expander">
+          <p class="description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda,
+            est reprehenderit officiis maiores id nisi, fugiat adipisci facilis
+            commodi quasi perferendis iusto accusantium velit! Porro, aliquam!
+            Aut quaerat illo commodi.
+          </p>
+          <img src="#" alt="expanded image of the dish" />
+        </aside>
       </section>
     </main>
     <footer></footer>
