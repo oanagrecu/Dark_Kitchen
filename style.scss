@@ -6,6 +6,8 @@
   --font-libre: 'Libre Franklin', sans-serif;
 }
 
+$sans-serif: 'Libre Franklin';
+$serif: 'Fraunces';
 $bg-light: #ffefdb;
 $title-light: #742b26;
 $text-light: #81756e;
@@ -19,6 +21,9 @@ $text-dark: #81756e;
 $card-dark: #4e2c1c;
 
 html {
+  font : {
+    family: $serif;
+  }
 }
 
 p {
@@ -115,4 +120,3 @@ li {
   width: 100%;
   flex: 1 1 calc(40% - 4em);
 }
-
