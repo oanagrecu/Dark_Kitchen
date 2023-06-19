@@ -16,7 +16,7 @@ function handleData(data) {
     document.querySelector(".categories ul").innerHTML = categories
       .map(createCategoryFilter)
       .join("")
-  
+  ///blaaaaahhh//////
     // Add event listeners to the category filters
     document.querySelectorAll(".categories ul li button").forEach((button) => {
       button.addEventListener("click", () => {
