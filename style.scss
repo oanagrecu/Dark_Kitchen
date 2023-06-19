@@ -1,4 +1,7 @@
 :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   --font-fraunces: 'Fraunces', serif;
   --font-libre: 'Libre Franklin', sans-serif;
 }
@@ -59,7 +62,20 @@ li {
   list-style-type: none;
 }
 
+.categories {
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    li {
+      padding: 0.4em;
+    }
+  }
+}
+
 .search-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   flex: 1 1 100%;
   width: 100%;
 }
@@ -69,5 +85,7 @@ li {
   .card {
     background: $card-light;
     border-radius: 10px;
+    min-width: 300px;
+    max-width: 400px;
   }
 }
