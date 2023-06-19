@@ -75,6 +75,16 @@ showAllButton.addEventListener('click', () => {
 // Add the "Show All" button to the list of category buttons
 document.querySelector('.categories ul').appendChild(showAllButton);
 
+
+
+
+//////// search bar functionality /////
+const searchForDish= document.querySelector("#searchO");
+const inputValue = document.querySelector("#inputValue");
+searchForDish.addEventListener("click", searchItem);
+function searchItem(){
+  console.log(inputValue.value);
+}
 ///////////// dark mode toggle /////
 
 const darkModeSelect = document.getElementById("toggle-mode")
@@ -90,3 +100,4 @@ darkModeSelect.addEventListener("click", function () {
   var newTheme = currentTheme === "DARK" ? "LIGHT" : "DARK"
   darkModeSelect.textContent = newTheme
 })
+
