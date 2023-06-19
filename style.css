@@ -1,4 +1,7 @@
 :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   --font-fraunces: 'Fraunces', serif;
   --font-libre: 'Libre Franklin', sans-serif; }
 
@@ -29,6 +32,11 @@ body {
 
 li {
   list-style-type: none; }
+
+.categories ul {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1em; }
 
 .search-bar {
   flex: 1 1 100%;
