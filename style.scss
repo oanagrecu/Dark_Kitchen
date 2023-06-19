@@ -38,18 +38,25 @@ p {
 
 header {
   padding: 1em;
+  font-size: 1.6em;
   nav {
     display: flex;
     justify-content: space-between;
-
+    color: $title-light;
     div {
       display: flex;
+      font-size: 1.6rem;
 
+      span,
+      h2 {
+        font-size: 1.2rem;
+      }
       button {
         border: none;
-        padding: 0.4em 1em;
+        padding: 0 0.6rem;
         border-radius: 10px;
         background: $bg-dark;
+        font-size: 0.8rem;
       }
     }
     .price-expanded {
@@ -61,6 +68,7 @@ header {
 img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 body {
   background: $bg-light;
@@ -134,17 +142,44 @@ li {
     .top-card {
       display: flex;
       flex-flow: column-reverse;
-
+      .left {
+        h3 {
+          font-size: 1.8em;
+          text-align: center;
+          line-height: 1.2em;
+          height: 3em;
+          color: $title-light;
+        }
+      }
       .right {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         button {
-          padding: 1em;
+          font: {
+            size: 1.2em;
+          }
+          height: 3em;
+          width: 3em;
+          padding: 0.2em;
           background: $title-light;
           color: $offwhite;
-          border: none;
           border-radius: 10px;
+          border: none;
+
+          cursor: pointer;
+          &:hover {
+            background: none;
+            border: 2px solid $title-light;
+            color: $title-light;
+          }
+        }
+        ul li {
+          border: none;
+          padding: 0.4em 1em;
+          border-radius: 10px;
+          background: $bg-dark;
+          color: $offwhite;
         }
       }
     }

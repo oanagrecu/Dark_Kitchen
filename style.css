@@ -14,23 +14,31 @@ p {
   font-family: "Libre Franklin"; }
 
 header {
-  padding: 1em; }
+  padding: 1em;
+  font-size: 1.6em; }
   header nav {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    color: #742b26; }
     header nav div {
-      display: flex; }
+      display: flex;
+      font-size: 1.6rem; }
+      header nav div span,
+      header nav div h2 {
+        font-size: 1.2rem; }
       header nav div button {
         border: none;
-        padding: 0.4em 1em;
+        padding: 0 0.6rem;
         border-radius: 10px;
-        background: #81756e; }
+        background: #81756e;
+        font-size: 0.8rem; }
     header nav .price-expanded {
       display: none; }
 
 img {
   width: 100%;
-  height: auto; }
+  height: auto;
+  border-radius: 10px; }
 
 body {
   background: #ffefdb; }
@@ -93,40 +101,53 @@ li {
     .card-container .card .top-card {
       display: flex;
       flex-flow: column-reverse; }
+      .card-container .card .top-card .left h3 {
+        font-size: 1.8em;
+        text-align: center;
+        line-height: 1.2em;
+        height: 3em;
+        color: #742b26; }
       .card-container .card .top-card .right {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between; }
         .card-container .card .top-card .right button {
-          padding: 1em;
+          font-size: 1.2em;
+          height: 3em;
+          width: 3em;
+          padding: 0.2em;
           background: #742b26;
           color: #ffefdb;
+          border-radius: 10px;
           border: none;
-          border-radius: 10px; }
+          cursor: pointer; }
+          .card-container .card .top-card .right button:hover {
+            background: none;
+            border: 2px solid #742b26;
+            color: #742b26; }
+        .card-container .card .top-card .right ul li {
+          border: none;
+          padding: 0.4em 1em;
+          border-radius: 10px;
+          background: #81756e;
+          color: #ffefdb; }
 
 .card-expander {
   width: 100%;
-  flex: 1 1 calc(40% - 4em);
-}
-
-/* Dark Theme */
-.dark-theme {
-  background-color: #81756e;
-  color: #ffefdb;
-
-}
-.dark-theme .card {
-  background-color: #4e2c1c;
-  color: #81756e;
-}
-.dark-theme h1 {
-  color: #ffefdb;
-}/*# sourceMappingURL=style.css.map */
-=======
   flex: 1 1 calc(40% - 4em); }
 
 @media only screen and (max-width: 800px) {
   #side-view {
     display: none; } }
+/* Dark Theme */
+.dark-theme {
+  background-color: #81756e;
+  color: #ffefdb;
+  /*# sourceMappingURL=style.css.map */ }
+  .dark-theme .card {
+    background-color: #4e2c1c;
+    color: #81756e; }
+  .dark-theme h1 {
+    color: #ffefdb; }
 
 /*# sourceMappingURL=style.css.map */
