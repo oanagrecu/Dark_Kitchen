@@ -9,24 +9,24 @@ fetch('data.json')
   .catch((error) => console.error('Error:', error));
 function handleData(data) {
   ////insert dishes into the menu
-  const menu = document.getElementById("menu")
-  data.dishes.forEach((dish) => menu.appendChild(createDishCard(dish)))
-    // Insert category filters
-    let categories = getCategories(data.dishes)
-    categories.unshift("all") // Add "all" as the first category
-    document.querySelector(".categories ul").innerHTML = categories
-      .map(createCategoryFilter)
-      .join("")
+  const menu = document.getElementById('menu');
+  data.dishes.forEach((dish) => menu.appendChild(createDishCard(dish)));
+  // Insert category filters
+  let categories = getCategories(data.dishes);
+  categories.unshift('all'); // Add "all" as the first category
+  document.querySelector('.categories ul').innerHTML = categories
+    .map(createCategoryFilter)
+    .join('');
   ///blaaaaahhh//////
-    // Add event listeners to the category filters
-    document.querySelectorAll(".categories ul li button").forEach((button) => {
-      button.addEventListener("click", () => {
-        const category = button.dataset.category
-        document.querySelectorAll(".card").forEach((card) => {
-          card.style.display = card.dataset.category === category ? " " : "none"
-        })
-      })
-    })
+  // Add event listeners to the category filters
+  document.querySelectorAll('.categories ul li button').forEach((button) => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.category;
+      document.querySelectorAll('.card').forEach((card) => {
+        card.style.display = card.dataset.category === category ? ' ' : 'none';
+      });
+    });
+  });
 }
 
 ////create a card for each dish from data ////
@@ -75,7 +75,6 @@ document.querySelectorAll('nav ul button').forEach((button) => {
 function getCategories(dishes) {
   return [...new Set(dishes.map((dish) => dish.category))];
 }
-  
 
 // Create a "All Categories" button
 const showAllButton = document.createElement('button');
@@ -90,14 +89,11 @@ showAllButton.addEventListener('click', () => {
 // Add the "Show All" button to the list of category buttons
 document.querySelector('.categories ul').appendChild(showAllButton);
 
-
-
-
 //////// search bar functionality /////
-const searchForDish= document.querySelector("#searchO");
-const inputValue = document.querySelector("#inputValue");
-searchForDish.addEventListener("click", searchItem);
-function searchItem(){
+const searchForDish = document.querySelector('#searchO');
+const inputValue = document.querySelector('#inputValue');
+searchForDish.addEventListener('click', searchItem);
+function searchItem() {
   console.log(inputValue.value);
 }
 ///////////// dark mode toggle /////
@@ -116,79 +112,79 @@ darkModeSelect.addEventListener('click', function () {
   darkModeSelect.textContent = newTheme;
 });
 
-//// add
-//let prevClick = null;
-//let prevImg = null;
-//let bigImg = document.querySelector('#side-view big-img');
-//let bigDesc = document.querySelector('#side-view big-description');
-//let asideView = document.getElementById('side-view');
+// add
+let prevClick = null;
+let prevImg = null;
+let bigImg = document.querySelector('#side-view big-img');
+let bigDesc = document.querySelector('#side-view big-description');
+let asideView = document.getElementById('side-view');
 
-//setTimeout(() => {
-//  console.log('hello');
-//  let foodCard = document.getElementsByClassName('card');
+setTimeout(() => {
+  console.log('hello');
+  let foodCard = document.getElementsByClassName('card');
 
-//  Array.from(foodCard).forEach((card) => {
-//    let productShot = card.getElementsByClassName('product-shot');
-//    let description = card.getElementsByClassName('description');
-//const darkModeSelect = document.getElementById("toggle-mode")
-//darkModeSelect.addEventListener("click", function () {
-//  var body = document.body
+  Array.from(foodCard).forEach((card) => {
+    let productShot = card.getElementsByClassName('product-shot');
+    let description = card.getElementsByClassName('description');
+    const darkModeSelect = document.getElementById('toggle-mode');
+    darkModeSelect.addEventListener('click', function () {
+      var body = document.body;
 
-//  // Toggle the theme classes on the body
-//  body.classList.toggle("dark-theme")
-//  body.classList.toggle("light-theme")
+      // Toggle the theme classes on the body
+      body.classList.toggle('dark-theme');
+      body.classList.toggle('light-theme');
 
-//  // Toggle the button text
-//  var currentTheme = darkModeSelect.textContent
-//  var newTheme = currentTheme === "DARK" ? "LIGHT" : "DARK"
-//  darkModeSelect.textContent = newTheme
-//})
+      // Toggle the button text
+      var currentTheme = darkModeSelect.textContent;
+      var newTheme = currentTheme === 'DARK' ? 'LIGHT' : 'DARK';
+      darkModeSelect.textContent = newTheme;
+    });
 
-//    ///
+    ///
 
-//    Array.from(description).forEach((desc) => {
-//      card.addEventListener('click', (e) => {
-//        if (card.className === 'card') {
-//          // e.currentTarget.classList.add('white');
-//          let current = desc.cloneNode(true);
-//          current.setAttribute('class', 'big-description');
-//          asideView.append(current);
-//          console.log(desc.cloneNode(true));
+    Array.from(description).forEach((desc) => {
+      card.addEventListener('click', (e) => {
+        if (card.className === 'card') {
+          // e.currentTarget.classList.add('white');
+          let current = desc.cloneNode(true);
+          current.setAttribute('class', 'big-description');
+          asideView.append(current);
+          console.log(desc.cloneNode(true));
 
-//          if (prevClick !== null && asideView.childNodes !== null) {
-//            // prevClick.classList.remove('white');
+          if (prevClick !== null && asideView.childNodes !== null) {
+            // prevClick.classList.remove('white');
 
-//            bigDesc.replaceWith(current);
-//          }
-//          console.log(asideView.childNodes);
-//          bigDesc = current;
+            bigDesc.replaceWith(current);
+          }
+          console.log(asideView.childNodes);
+          bigDesc = current;
 
-//          prevClick = e.currentTarget;
-//        }
-//      });
-//    });
+          prevClick = e.currentTarget;
+        }
+      });
+    });
 
-//    //
-//    Array.from(productShot).forEach((img) => {
-//      card.addEventListener('click', (e) => {
-//        if (card.className === 'card') {
-//          // e.currentTarget.classList.add('white');
-//          let current = img.cloneNode(true);
-//          current.setAttribute('class', 'big-img');
-//          asideView.append(current);
-//          console.log(img.cloneNode(true));
+    //
+    Array.from(productShot).forEach((img) => {
+      card.addEventListener('click', (e) => {
+        if (card.className === 'card') {
+          // e.currentTarget.classList.add('white');
+          let current = img.cloneNode(true);
+          current.setAttribute('class', 'big-img');
+          asideView.append(current);
+          console.log(img.cloneNode(true));
 
-//          if (prevImg !== null && asideView.childNodes !== null) {
-//            // prevClick.classList.remove('white');
+          if (prevImg !== null && asideView.childNodes !== null) {
+            // prevClick.classList.remove('white');
 
-//            bigImg.replaceWith(current);
-//          }
-//          console.log(asideView.childNodes);
-//          bigImg = current;
-//          console.log(bigImg);
-//          prevImg = e.currentTarget;
-//        }
-//      });
-//    });
-//  });
-//}, 200)
+            bigImg.replaceWith(current);
+          }
+          console.log(asideView.childNodes);
+          bigImg = current;
+          console.log(bigImg);
+          prevImg = e.currentTarget;
+        }
+      });
+    });
+  });
+}, 200);

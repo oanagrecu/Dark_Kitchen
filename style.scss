@@ -84,6 +84,7 @@ body {
     .hero {
       h1 {
         font-size: 3em;
+        text-align: center;
         text-transform: capitalize !important;
         padding: 1rem 0;
       }
@@ -104,10 +105,11 @@ li {
     flex-flow: row wrap;
     justify-content: center;
     gap: 1em;
-    li {
+    li button {
       color: $offwhite;
       padding: 0.4em;
       background: $bg-dark;
+      border: none;
       border-radius: 10px;
     }
   }
@@ -188,24 +190,13 @@ li {
   width: 100%;
   flex: 1 1 calc(40% - 4em);
 }
-
 #side-view {
-  padding: 1em;
   position: fixed;
-  margin-top: -3rem;
-  .big-description {
-    font-family: $serif;
-    font-size: 1.2rem;
-    color: $title-light;
-    text-align: center;
-    padding: 1em;
-  }
   img {
-    margin: 1em;
-    width: calc(100% - 2em);
-    border-radius: 10px;
+    max-width: 100%;
   }
 }
+
 // import mediaqueries
 @import 'mediaqueries';
 @import 'oanastyle';
