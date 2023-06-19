@@ -23,13 +23,22 @@ body {
     flex-flow: row wrap;
     justify-content: center; }
     body main .content {
-      display: flex; }
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center; }
 
 li {
   list-style-type: none; }
 
-.card {
-  background: #ffcc00;
-  border-radius: 10px; }
+.search-bar {
+  flex: 1 1 100%;
+  width: 100%; }
+
+.card-container {
+  width: 100%;
+  border: 1px dotted black; }
+  .card-container .card {
+    background: #ffcc00;
+    border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */

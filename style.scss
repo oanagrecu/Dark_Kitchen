@@ -49,6 +49,8 @@ body {
     justify-content: center;
     .content {
       display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
     }
   }
 }
@@ -57,7 +59,15 @@ li {
   list-style-type: none;
 }
 
-.card {
-  background: $card-light;
-  border-radius: 10px;
+.search-bar {
+  flex: 1 1 100%;
+  width: 100%;
+}
+.card-container {
+  width: 100%;
+  border: 1px dotted black;
+  .card {
+    background: $card-light;
+    border-radius: 10px;
+  }
 }
