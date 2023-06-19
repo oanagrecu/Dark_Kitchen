@@ -36,9 +36,11 @@ p {
 }
 
 header {
+  padding: 1em;
   nav {
     display: flex;
     justify-content: space-between;
+
     div {
       display: flex;
 
@@ -70,6 +72,13 @@ body {
       flex-flow: row wrap;
       justify-content: center;
     }
+    .hero {
+      h1 {
+        font-size: 2em;
+        text-transform: capitalize !important;
+        padding: 2em 0;
+      }
+    }
   }
 }
 
@@ -80,6 +89,7 @@ li {
 .categories {
   flex: 1 1 100%;
   width: 100%;
+  padding: 2em 0;
   ul {
     display: flex;
     flex-flow: row wrap;
@@ -100,6 +110,7 @@ li {
   justify-content: center;
   flex: 1 1 100%;
   width: 100%;
+  padding: 0 0 1em 0;
 }
 .card-container {
   width: 100%;
@@ -123,3 +134,6 @@ li {
   width: 100%;
   flex: 1 1 calc(40% - 4em);
 }
+
+// import mediaqueries
+@import 'mediaqueries';
