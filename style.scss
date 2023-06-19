@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --font-fraunces: 'Fraunces', serif;
-  --font-libre: 'Libre Franklin', sans-serif;
+  --font-fraunces: "Fraunces", serif;
+  --font-libre: "Libre Franklin", sans-serif;
 }
 
-$sans-serif: 'Libre Franklin';
-$serif: 'Fraunces';
+$sans-serif: "Libre Franklin";
+$serif: "Fraunces";
 $bg-light: #ffefdb;
 $title-light: #742b26;
 $text-light: #81756e;
@@ -120,3 +120,4 @@ li {
   width: 100%;
   flex: 1 1 calc(40% - 4em);
 }
+@import "oanastyle";
