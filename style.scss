@@ -66,11 +66,16 @@ li {
   ul {
     display: flex;
     flex-flow: row wrap;
-    padding: 1em;
+    li {
+      padding: 0.4em;
+    }
   }
 }
 
 .search-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   flex: 1 1 100%;
   width: 100%;
 }
@@ -80,5 +85,7 @@ li {
   .card {
     background: $card-light;
     border-radius: 10px;
+    min-width: 300px;
+    max-width: 400px;
   }
 }

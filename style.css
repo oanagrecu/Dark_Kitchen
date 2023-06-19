@@ -35,10 +35,14 @@ li {
 
 .categories ul {
   display: flex;
-  flex-flow: row wrap;
-  padding: 1em; }
+  flex-flow: row wrap; }
+  .categories ul li {
+    padding: 0.4em; }
 
 .search-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
   flex: 1 1 100%;
   width: 100%; }
 
@@ -47,6 +51,8 @@ li {
   border: 1px dotted black; }
   .card-container .card {
     background: #ffcc00;
-    border-radius: 10px; }
+    border-radius: 10px;
+    min-width: 300px;
+    max-width: 400px; }
 
 /*# sourceMappingURL=style.css.map */
