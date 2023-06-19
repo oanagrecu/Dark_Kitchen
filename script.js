@@ -10,6 +10,23 @@ function handleData(data) {
   ////insert dishes into the menu
   const menu = document.getElementById("menu")
   data.dishes.forEach((dish) => menu.appendChild(createDishCard(dish)))
+    // Insert category filters
+    let categories = getCategories(data.dishes)
+    categories.unshift("all") // Add "all" as the first category
+    document.querySelector(".categories ul").innerHTML = categories
+      .map(createCategoryFilter)
+      .join("")
+  
+    // Add event listeners to the category filters
+    document.querySelectorAll(".categories ul li button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const category = button.dataset.category
+        document.querySelectorAll(".card").forEach((card) => {
+          card.style.display = card.dataset.category === category ? " " : "none"
+        })
+      })
+    })
+  
 }
 
 ////create a card for each dish from data ////
@@ -45,34 +62,6 @@ function createDishCard(dish) {
 }
 
 
-
-
-// Getting the categories from the dishes
-function getCategories(dishes) {
-   // get unique categories from dishes
-const categories = getCategories(dishes);
-
-// create a list item for each category and join them into a single HTML string
-const categoryListItems = categories.map(category => `<li><button>${category}</button></li>`).join('');
-
-// insert the list items into the unordered list into the HTML
-document.querySelector('.categories ul').innerHTML = categoryListItems;
-
-  }
-
-
-  
-  // Add event listeners to the category filters
-  document.querySelectorAll(".categories ul li button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const category = button.dataset.category;
-      document.querySelectorAll(".card").forEach((card) => {
-        card.style.display = card.dataset.category === category ? " " : "none";
-      });
-    });
-  });
-  
-
 // Create a "All Categories" button
 const showAllButton = document.createElement('button');
 showAllButton.innerText = 'All Categoties';
@@ -87,13 +76,14 @@ showAllButton.addEventListener('click', () => {
 document.querySelector('.categories ul').appendChild(showAllButton);
 
 
+
+
 //////// search bar functionality /////
 const searchForDish= document.querySelector("#searchO");
 const inputValue = document.querySelector("#inputValue");
 searchForDish.addEventListener("click", searchItem);
 function searchItem(){
   console.log(inputValue.value);
-  
 }
 ///////////// dark mode toggle /////
 
