@@ -1,4 +1,7 @@
 :root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   --font-fraunces: 'Fraunces', serif;
   --font-libre: 'Libre Franklin', sans-serif;
 }
@@ -18,8 +21,98 @@ $card-dark: #4e2c1c;
 html {
 }
 
-body {
-  background: $bg-light;
-  section {
+p {
+  font : {
+    family: $sans-serif;
   }
 }
+
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    div {
+      display: flex;
+
+      button {
+        border: none;
+        padding: 0.4em 1em;
+        border-radius: 10px;
+        background: $bg-dark;
+      }
+    }
+    .price-expanded {
+      display: none;
+    }
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+body {
+  background: $bg-light;
+  main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    .content {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+.categories {
+  flex: 1 1 100%;
+  width: 100%;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1em;
+    li {
+      color: $offwhite;
+      padding: 0.4em;
+      background: $bg-dark;
+      border-radius: 10px;
+    }
+  }
+}
+
+.search-bar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex: 1 1 100%;
+  width: 100%;
+}
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 1 calc(60% - 4em);
+  border: 1px dotted black;
+  padding: 1em;
+  gap: 1em;
+
+  .card {
+    flex: 1 1 calc(50% - 4em);
+    background: $card-light;
+    border-radius: 10px;
+
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+}
+.card-expander {
+  width: 100%;
+  flex: 1 1 calc(40% - 4em);
+}
+
