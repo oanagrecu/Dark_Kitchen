@@ -2,7 +2,33 @@
 @media only screen and (max-width: 800px) {
   body {
   }
+  .card-container {
+    width: 100%;
 
+    flex: 1 1 100%;
+
+    .card {
+      flex: 1 1 100%;
+    }
+  }
+  #side-view {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+  }
+
+  .card-container {
+    width: 100%;
+
+    flex: 1 1 100%;
+
+    .card {
+      flex: 1 1 30%;
+    }
+  }
   #side-view {
     display: none;
   }

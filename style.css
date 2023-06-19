@@ -137,6 +137,21 @@ li {
   flex: 1 1 calc(40% - 4em); }
 
 @media only screen and (max-width: 800px) {
+  .card-container {
+    width: 100%;
+    flex: 1 1 100%; }
+    .card-container .card {
+      flex: 1 1 100%; }
+
+  #side-view {
+    display: none; } }
+@media only screen and (max-width: 1200px) {
+  .card-container {
+    width: 100%;
+    flex: 1 1 100%; }
+    .card-container .card {
+      flex: 1 1 30%; }
+
   #side-view {
     display: none; } }
 /*# sourceMappingURL=style.css.map */
