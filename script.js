@@ -73,8 +73,8 @@ function getCategories(dishes) {
     body.classList.toggle("light-theme");
   
     // Toggle the button text
-    var currentTheme = toggleButton.textContent;
-    var newTheme = currentTheme === "dark" ? "light" : "dark";
-    toggleButton.textContent = newTheme;
+    var currentTheme = darkModeSelect.textContent;
+    var newTheme = currentTheme === "DARK" ? "LIGHT" : "DARK";
+    darkModeSelect.textContent = newTheme;
   });
 
