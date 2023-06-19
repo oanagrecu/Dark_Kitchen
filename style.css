@@ -88,16 +88,28 @@ li {
     height: auto;
     padding: 1em;
     display: flex;
+    flex-flow: column;
     gap: 1em; }
-    .card-container .card .right {
-      align-items: space-between; }
+    .card-container .card .top-card {
+      display: flex;
+      flex-flow: column-reverse; }
+      .card-container .card .top-card .right {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between; }
+        .card-container .card .top-card .right button {
+          padding: 1em;
+          background: #742b26;
+          color: #ffefdb;
+          border: none;
+          border-radius: 10px; }
 
 .card-expander {
   width: 100%;
   flex: 1 1 calc(40% - 4em); }
 
 @media only screen and (max-width: 800px) {
-  aside {
+  #side-view {
     display: none; } }
 
 /*# sourceMappingURL=style.css.map */

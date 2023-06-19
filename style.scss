@@ -129,9 +129,24 @@ li {
     height: auto;
     padding: 1em;
     display: flex;
+    flex-flow: column;
     gap: 1em;
-    .right {
-      align-items: space-between;
+    .top-card {
+      display: flex;
+      flex-flow: column-reverse;
+
+      .right {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        button {
+          padding: 1em;
+          background: $title-light;
+          color: $offwhite;
+          border: none;
+          border-radius: 10px;
+        }
+      }
     }
   }
 }
