@@ -77,3 +77,10 @@ function getCategories(dishes) {
     darkModeSelect.textContent = newTheme;
   });
 
+const searchForDish= document.querySelector("#searchO");
+const inputValue = document.querySelector("#inputValue");
+searchForDish.addEventListener("click", searchItem);
+function searchItem(){
+  console.log(inputValue.value);
+  
+}
