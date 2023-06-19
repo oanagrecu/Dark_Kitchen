@@ -1,12 +1,16 @@
+/*# sourceMappingURL=style.css.map */
+
 /* Dark Theme */
 .dark-theme {
     background-color: #81756e;
     color: #ffefdb;
-
-    /*# sourceMappingURL=style.css.map */
+    #toggle-mode {
+        background-color: #ffefdb;
+        color: #81756e;
+    }
     .card {
         background-color: #4e2c1c;
-        color: #81756e;
+        color: #ffefdb;
     }
     h1 {
         color: #ffefdb;
