@@ -20,8 +20,7 @@ function createDishCard(dish) {
   card.dataset.id = dish.id
   card.dataset.category = dish.category
   card.innerHTML = `
-  
-     <div class="card">
+     <div class="top-card">
     <div class="left">
       <h3>${dish.name}</h3>
       <img src="${dish.picture}" alt="preview menu item" />
