@@ -5,7 +5,7 @@
             "name": "Lamb Tzatziki Burgers",
             "description": "A delicious burger with all the fixings.",
             "price": 15.99,
-            "category": "greek",
+            "category": ["greek", "chicken"],
             "picture": "https://www.themealdb.com/images/media/meals/k420tj1585565244.jpg",
             "rating": 4.5
         },
@@ -14,7 +14,7 @@
             "name": "Chicken Marengo",
             "description": "A French dish consisting of a chicken sautéed in oil with garlic and tomato, garnished with fried eggs and crayfish.",
             "price": 17.99,
-            "category": "french",
+            "category": ["french", "chicken"],
             "picture": "https://www.themealdb.com/images/media/meals/qpxvuq1511798906.jpg",
             "rating": 4.2
         },
@@ -23,7 +23,7 @@
             "name": "Spaghetti Carbonara",
             "description": "Delicious spaghetti with a creamy carbonara sauce.",
             "price": 13.99,
-            "category": "italian",
+            "category": ["italian"],
             "picture": "https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg",
             "rating": 4.8
         },
@@ -32,7 +32,7 @@
             "name": "Chicken Quinoa Salad",
             "description": "A fresh and healthy quinoa salad with a variety of vegetables.",
             "price": 9.99,
-            "category": "greek",
+            "category": ["greek", "chicken", "vegetarian"],
             "picture": "https://www.themealdb.com/images/media/meals/k29viq1585565980.jpg",
             "rating": 4.3
         },
@@ -41,7 +41,7 @@
             "name": "Pizza Margherita",
             "description": "A classic pizza margherita with fresh basil and mozzarella cheese.",
             "price": 14.99,
-            "category": "italian",
+            "category": ["italian", "vegetarian"],
             "picture": "https://www.themealdb.com/images/media/meals/x0lk931587671540.jpg",
             "rating": 4.7
         },
@@ -50,7 +50,7 @@
             "name": "Mediterranean Pasta Salad",
             "description": "A tasty falafel wrap with tahini sauce and fresh vegetables.",
             "price": 12.99,
-            "category": "italian",
+            "category": ["italian", "vegetarian"],
             "picture": "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg",
             "rating": 4.1
         },
@@ -59,7 +59,7 @@
             "name": "Chicken Handi",
             "description": "A must-try dish for Indian curry lovers. Aromatic, tender boneless chicken pieces cooked in creamy curry sauce.",
             "price": 15.99,
-            "category": "indian",
+            "category": ["indian", "chicken"],
             "picture": "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg",
             "rating": 4.6
         },
@@ -68,7 +68,7 @@
             "name": "Sushi",
             "description": "A variety of vegan sushi rolls with fresh vegetables and tofu.",
             "price": 17.99,
-            "category": "japanese",
+            "category": ["japanese", "vegetarian"],
             "picture": "https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg",
             "rating": 4.4
         },
@@ -77,7 +77,7 @@
             "name": "Spicy Arrabiata Penne",
             "description": "Fresh flavors mixed in with it, the fresh parsley, basil and parmesan.",
             "price": 16.99,
-            "category": "italian",
+            "category": ["italian"],
             "picture": "https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg",
             "rating": 4.0
         },
@@ -86,7 +86,7 @@
             "name": "Crock Pot Chicken Baked Tacos",
             "description": "Easy shredded chicken is combined with cheese, layered in a tortilla and baked to perfection.",
             "price": 18.99,
-            "category": "mexican",
+            "category": ["mexican", "chicken"],
             "picture": "https://www.themealdb.com/images/media/meals/ypxvwv1505333929.jpg",
             "rating": 4.2
         },
@@ -95,7 +95,7 @@
             "name": "Pork Cassoulet",
             "description": "traditional French bean stew with pork, duck confit, and sausage.",
             "price": 17.99,
-            "category": "french",
+            "category": ["french"],
             "picture": "https://www.themealdb.com/images/media/meals/wxuvuv1511299147.jpg",
             "rating": 4.9
         },
@@ -104,7 +104,7 @@
             "name": "Tonkatsu pork",
             "description": "Tonkatsu is a popular Japanese dish where the pork is coated in flour, beaten eggs, and panko breadcrumbs and deep fried in oil.",
             "price": 20.99,
-            "category": "japanese",
+            "category": ["japanese"],
             "picture": "https://www.themealdb.com/images/media/meals/lwsnkl1604181187.jpg",
             "rating": 4.3
         },
@@ -113,7 +113,7 @@
             "name": "Braised Beef Chilli",
             "description": "Ancho chilli, dark chocolate and paprika add wonderful flavours to this slow-cooked beef chilli. Serve with fresh bean salsa for an impressive one-pot dish.",
             "price": 20.99,
-            "category": "mexican",
+            "category": ["mexican"],
             "picture": "https://www.themealdb.com/images/media/meals/uuqvwu1504629254.jpg",
             "rating": 4.7
         },
@@ -122,7 +122,7 @@
             "name": "Cajun spiced fish tacos",
             "description": "Delicious smoky seared Cajun fish with rich creamy avocado cilantro sauce & spicy tangy pico de gallo all wrapped in warm tortilla.",
             "price": 15.99,
-            "category": "mexican",
+            "category": ["mexican"],
             "picture": "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
             "rating": 4.5
         },
@@ -131,7 +131,7 @@
             "name": "Recheado Masala Fish",
             "description": "The fish is slit and stuffed with amazing tangy, spicy recheado masala, then coated with rava and shallow fried until golden brown and crispy.",
             "price": 15.99,
-            "category": "indian",
+            "category": ["indian"],
             "picture": "https://www.themealdb.com/images/media/meals/uwxusv1487344500.jpg",
             "rating": 4.4
         },
@@ -140,7 +140,7 @@
             "name": "Fish Stew with Rouille",
             "description": "Served with rouille, a red, mayonnaise-like sauce, this robust seafood stew will transport you to the French port city of Marseille",
             "price": 18.99,
-            "category": "french",
+            "category": ["french"],
             "picture": "https://www.themealdb.com/images/media/meals/vptqpw1511798500.jpg",
             "rating": 4.2
         },
@@ -149,7 +149,7 @@
             "name": "Lamb Rogan josh",
             "description": "An Indian lamb curry with a heady combination of intense spices in a creamy tomato curry sauce. ",
             "price": 15.99,
-            "category": "indian",
+            "category": ["indian"],
             "picture": "https://www.themealdb.com/images/media/meals/vvstvq1487342592.jpg",
             "rating": 4.6
         },
@@ -158,7 +158,7 @@
             "name": "Stuffed Lamb Tomatoes",
             "description": "Tomatoes filled with delicious Mediterranean lamb flavoured with olives, lemon and herbs.",
             "price": 16.99,
-            "category": "greek",
+            "category": ["greek"],
             "picture": "https://www.themealdb.com/images/media/meals/u55lbp1585564013.jpg",
             "rating": 4.1
         },
@@ -167,7 +167,7 @@
             "name": "Honey Teriyaki Salmon",
             "description": "This honey teriyaki salmon is moist, juicy, with a sticky sweet and savory honey teriyaki glaze",
             "price": 21.99,
-            "category": "japanese",
+            "category": ["japanese"],
             "picture": "https://www.themealdb.com/images/media/meals/xxyupu1468262513.jpg",
             "rating": 4.7
         },
@@ -176,7 +176,7 @@
             "name": "Salmon Prawn Risotto",
             "description": "An easy hot smoked salmon and prawn risotto flavoured with lemon and parsley.",
             "price": 14.99,
-            "category": "italian",
+            "category": ["italian"],
             "picture": "https://www.themealdb.com/images/media/meals/xxrxux1503070723.jpg",
             "rating": 4.3
         }
