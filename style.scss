@@ -84,6 +84,7 @@ body {
     .hero {
       h1 {
         font-size: 3em;
+        text-align: center;
         text-transform: capitalize !important;
         padding: 1rem 0;
       }
@@ -104,10 +105,11 @@ li {
     flex-flow: row wrap;
     justify-content: center;
     gap: 1em;
-    li {
+    li button {
       color: $offwhite;
       padding: 0.4em;
       background: $bg-dark;
+      border: none;
       border-radius: 10px;
     }
   }
@@ -126,7 +128,6 @@ li {
   display: flex;
   flex-flow: row wrap;
   flex: 1 1 calc(60% - 4em);
-  border: 1px dotted black;
   padding: 1em;
   gap: 1em;
 
@@ -188,6 +189,12 @@ li {
 .card-expander {
   width: 100%;
   flex: 1 1 calc(40% - 4em);
+}
+#side-view {
+  position: fixed;
+  img {
+    max-width: 100%;
+  }
 }
 
 // import mediaqueries
