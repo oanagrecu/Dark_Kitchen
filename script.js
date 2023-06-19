@@ -33,8 +33,7 @@ function createDishCard(dish) {
       <ul class="cathegories">
         <li>${dish.category}</li>
       </ul>
-      <span class="price-item"> ${dish.price}</span>
-      <button>ADD</button>
+      <button class="price-item">${dish.price}</button>
     </div>
   </div>
   <aside class="card-expander">
@@ -43,8 +42,8 @@ function createDishCard(dish) {
   </p>
   </aside>
   `
-  return card
-}
+    return card
+  }
 
 // Add event listeners to the category filters
 document.querySelectorAll("nav ul button").forEach((button) => {
@@ -60,3 +59,21 @@ document.querySelectorAll("nav ul button").forEach((button) => {
 function getCategories(dishes) {
   return [...new Set(dishes.map((dish) => dish.category))]
 }
+
+///////////// dark mode toggle /////
+
+
+  const darkModeSelect = document.getElementById("toggle-mode");
+  darkModeSelect.addEventListener("click", function () {
+    var body = document.body;
+  
+    // Toggle the theme classes on the body
+    body.classList.toggle("dark-theme");
+    body.classList.toggle("light-theme");
+  
+    // Toggle the button text
+    var currentTheme = toggleButton.textContent;
+    var newTheme = currentTheme === "dark" ? "light" : "dark";
+    toggleButton.textContent = newTheme;
+  });
+

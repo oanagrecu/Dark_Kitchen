@@ -106,6 +106,23 @@ li {
 
 .card-expander {
   width: 100%;
+  flex: 1 1 calc(40% - 4em);
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #81756e;
+  color: #ffefdb;
+
+}
+.dark-theme .card {
+  background-color: #4e2c1c;
+  color: #81756e;
+}
+.dark-theme h1 {
+  color: #ffefdb;
+}/*# sourceMappingURL=style.css.map */
+=======
   flex: 1 1 calc(40% - 4em); }
 
 @media only screen and (max-width: 800px) {
