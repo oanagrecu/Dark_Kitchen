@@ -8,11 +8,14 @@ fetch("data.json")
   })
   .catch((error) => console.error("Error:", error))
 function handleData(data) {
-  // Insert dishes into the menu
+
+  ////Insert dishes into the menu
   const menu = document.getElementById("menu")
   data.dishes.forEach((dish) => menu.appendChild(createDishCard(dish)))
 }
 
+
+////create a card for each dish from data ////
 function createDishCard(dish) {
     const card = document.createElement("div")
     card.classList.add("card")
