@@ -1,6 +1,25 @@
 /*# sourceMappingURL=style.css.map */
 
 /* Dark Theme */
+:root {
+    --font-fraunces: "Fraunces", serif;
+    --font-libre: "Libre Franklin", sans-serif;
+}
+
+$sans-serif: "Libre Franklin";
+$serif: "Fraunces";
+$bg-light: #ffefdb;
+$title-light: #742b26;
+$text-light: #81756e;
+$card-light: #ffcc00;
+
+$offwhite: #ffefdb;
+
+$bg-dark: #81756e;
+$title-dark: #ffefdb;
+$text-dark: #81756e;
+$card-dark: #4e2c1c;
+
 .dark-theme {
     background-color: #81756e;
     color: #ffefdb;
@@ -14,5 +33,8 @@
     }
     h1 {
         color: #ffefdb;
+    }
+    .card-container .card .top-card .left h3 {
+        color: $title-dark;
     }
 }
