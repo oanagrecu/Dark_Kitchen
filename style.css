@@ -1,8 +1,8 @@
 :root {
-  --font-fraunces: 'Fraunces', serif;
-  --font-libre: 'Libre Franklin', sans-serif; }
+  --font-fraunces: "Fraunces", serif;
+  --font-libre: "Libre Franklin", sans-serif;
+}
 
 body {
-  background: #ffefdb; }
-
-/*# sourceMappingURL=style.css.map */
+  background: #ffefdb;
+}/*# sourceMappingURL=style.css.map */
