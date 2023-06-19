@@ -16,8 +16,17 @@ header nav {
   justify-content: space-between; }
   header nav div {
     display: flex; }
+    header nav div button {
+      border: none;
+      padding: 0.4em 1em;
+      border-radius: 10px;
+      background: #81756e; }
   header nav .price-expanded {
     display: none; }
+
+img {
+  width: 100%;
+  height: auto; }
 
 body {
   background: #ffefdb; }
@@ -33,11 +42,19 @@ body {
 li {
   list-style-type: none; }
 
-.categories ul {
-  display: flex;
-  flex-flow: row wrap; }
-  .categories ul li {
-    padding: 0.4em; }
+.categories {
+  flex: 1 1 100%;
+  width: 100%; }
+  .categories ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1em; }
+    .categories ul li {
+      color: #ffefdb;
+      padding: 0.4em;
+      background: #81756e;
+      border-radius: 10px; }
 
 .search-bar {
   display: flex;
@@ -47,12 +64,20 @@ li {
   width: 100%; }
 
 .card-container {
-  width: 100%;
-  border: 1px dotted black; }
+  width: 50%;
+  flex: 1 1 calc(60% - 4em);
+  border: 1px dotted black;
+  gap: 1em; }
   .card-container .card {
     background: #ffcc00;
     border-radius: 10px;
     min-width: 300px;
-    max-width: 400px; }
+    max-width: 400px;
+    padding: 1em;
+    margin-bottom: 1em; }
+
+.card-expander {
+  width: 100%;
+  flex: 1 1 calc(40% - 4em); }
 
 /*# sourceMappingURL=style.css.map */

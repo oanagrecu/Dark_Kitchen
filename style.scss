@@ -38,11 +38,23 @@ header {
     justify-content: space-between;
     div {
       display: flex;
+
+      button {
+        border: none;
+        padding: 0.4em 1em;
+        border-radius: 10px;
+        background: $bg-dark;
+      }
     }
     .price-expanded {
       display: none;
     }
   }
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 body {
   background: $bg-light;
@@ -63,11 +75,18 @@ li {
 }
 
 .categories {
+  flex: 1 1 100%;
+  width: 100%;
   ul {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    gap: 1em;
     li {
+      color: $offwhite;
       padding: 0.4em;
+      background: $bg-dark;
+      border-radius: 10px;
     }
   }
 }
@@ -80,12 +99,21 @@ li {
   width: 100%;
 }
 .card-container {
-  width: 100%;
+  width: 50%;
+  flex: 1 1 calc(60% - 4em);
   border: 1px dotted black;
+  gap: 1em;
+
   .card {
     background: $card-light;
     border-radius: 10px;
     min-width: 300px;
     max-width: 400px;
+    padding: 1em;
+    margin-bottom: 1em;
   }
+}
+.card-expander {
+  width: 100%;
+  flex: 1 1 calc(40% - 4em);
 }
