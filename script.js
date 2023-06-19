@@ -48,3 +48,18 @@ function createDishCard(dish) {
   `
     return card
   }
+
+  const darkModeSelect = document.getElementById("toggle-mode");
+  darkModeSelect.addEventListener("click", function () {
+    var body = document.body;
+  
+    // Toggle the theme classes on the body
+    body.classList.toggle("dark-theme");
+    body.classList.toggle("light-theme");
+  
+    // Toggle the button text
+    var currentTheme = toggleButton.textContent;
+    var newTheme = currentTheme === "dark" ? "light" : "dark";
+    toggleButton.textContent = newTheme;
+  });
+  
