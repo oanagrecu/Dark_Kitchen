@@ -232,8 +232,8 @@ li {
 .cathegories {
   align-self: start;
 }
-.fa-cart-shopping{
-  padding: 0 2rem;;
+.fa-cart-shopping {
+  padding: 0 2rem;
 }
 .price-expanded {
   display: none;
@@ -249,6 +249,7 @@ li {
   height: 100vh;
   background: $card-light;
   border-radius: 10px;
+  z-index: 9000 !important;
   h3 {
     font-size: 1.6em;
   }
