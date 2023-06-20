@@ -112,12 +112,12 @@ function searchItem(){
   }
 
 
-const searchForDish = document.querySelector("#searchO")
-const inputValue = document.querySelector("#inputValue")
-searchForDish.addEventListener("click", searchItem)
-function searchItem() {
-  console.log(inputValue.value)
-}
+//const searchForDish = document.querySelector("#searchO")
+//const inputValue = document.querySelector("#inputValue")
+//searchForDish.addEventListener("click", searchItem)
+//function searchItem() {
+//  console.log(inputValue.value)
+//}
 
 ///////////// dark mode toggle ///////////////
 
@@ -143,17 +143,12 @@ let bigDesc = document.querySelector("#side-view big-description")
 let asideView = document.getElementById("side-view")
 
 setTimeout(() => {
-  console.log("hello")
   let foodCard = document.getElementsByClassName("card")
 
   Array.from(foodCard).forEach((card) => {
     let productShot = card.getElementsByClassName("product-shot")
     let description = card.getElementsByClassName("description")
-    const darkModeSelect = document.getElementById("toggle-mode")
-    darkModeSelect.addEventListener("click", function () {
-      var body = document.body
-
-    ///
+   
 
     Array.from(description).forEach((desc) => {
       card.addEventListener("click", (e) => {
@@ -176,7 +171,6 @@ setTimeout(() => {
         }
       })
     })
-
     //
     Array.from(productShot).forEach((img) => {
       card.addEventListener("click", (e) => {
