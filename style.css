@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -117,16 +118,18 @@ li {
         flex-flow: row wrap;
         justify-content: space-between; }
         .card-container .card .top-card .right button {
-          font-size: 1.2em;
-          height: 3em;
-          width: 3em;
+          font-size: 1em;
+          height: max-content;
+          width: max-content;
           padding: 0.2em;
-          background: #742b26;
-          color: #ffefdb;
-          border-radius: 10px;
-          border: none;
+          background: transparent;
+          color: #742b26;
+          border-radius: 50%;
+          border: 1px solid #742b26;
           font-family: "Fraunces";
           cursor: pointer; }
+          .card-container .card .top-card .right button::before {
+            content: '€'; }
           .card-container .card .top-card .right button:hover {
             background: none;
             border: 2px solid #742b26;
@@ -142,6 +145,7 @@ li {
           .card-container .card .top-card .right ul li {
             border: 1px solid #ffefdb;
             padding: 0.2em 0.4em;
+            margin: 0.2em;
             border-radius: 10px;
             color: #ffefdb;
             align-self: start;

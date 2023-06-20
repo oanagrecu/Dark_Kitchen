@@ -163,17 +163,20 @@ li {
         justify-content: space-between;
         button {
           font: {
-            size: 1.2em;
+            size: 1em;
           }
-          height: 3em;
-          width: 3em;
+          height: max-content;
+          width: max-content;
           padding: 0.2em;
-          background: $title-light;
-          color: $offwhite;
-          border-radius: 10px;
-          border: none;
+          background: transparent;
+          color: $title-light;
+          border-radius: 50%;
+          border: 1px solid $title-light;
           font-family: $serif;
           cursor: pointer;
+          &::before {
+            content: '€';
+          }
           &:hover {
             background: none;
             border: 2px solid $title-light;
@@ -191,6 +194,7 @@ li {
           li {
             border: 1px solid $offwhite;
             padding: 0.2em 0.4em;
+            margin: 0.2em;
             border-radius: 10px;
 
             color: $offwhite;
