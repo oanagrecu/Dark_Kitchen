@@ -29,14 +29,16 @@ header nav {
 header nav div {
   display: flex;
   font-size: 1.6rem;
+  align-items: flex-start;
 }
 header nav div span,
 header nav div h2 {
   font-size: 1.2rem;
+  padding-left: 0.4em;
 }
 header nav div button {
   border: none;
-  padding: 0 0.6rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 10px;
   background: #81756e;
   font-size: 0.8rem;
@@ -44,27 +46,6 @@ header nav div button {
 header nav .price-expanded {
   display: none;
 }
-  font-size: 1.6em; }
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    color: #742b26; }
-    header nav div {
-      display: flex;
-      font-size: 1.6rem;
-      align-items: flex-start; }
-      header nav div span,
-      header nav div h2 {
-        font-size: 1.2rem;
-        padding-left: 0.4em; }
-      header nav div button {
-        border: none;
-        padding: 0.6rem 0.8rem;
-        border-radius: 10px;
-        background: #81756e;
-        font-size: 0.8rem; }
-    header nav .price-expanded {
-      display: none; }
 
 img {
   width: 100%;
@@ -86,25 +67,11 @@ body main .content {
   justify-content: center;
 }
 body main .hero h1 {
-  font-size: 3em;
+  font-size: 4rem;
   text-align: center;
   text-transform: capitalize !important;
   padding: 1rem 0;
 }
-  background: #ffefdb; }
-  body main {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center; }
-    body main .content {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center; }
-    body main .hero h1 {
-      font-size: 4rem;
-      text-align: center;
-      text-transform: capitalize !important;
-      padding: 1rem 0; }
 
 li {
   list-style-type: none;
@@ -206,44 +173,25 @@ li {
 
 .card-expander {
   width: 100%;
-  flex: 1 1 calc(40% - 4em);
+  flex: 1 1 50%;
 }
-
-#side-view {
-  position: fixed;
-  margin-top: -3rem;
-}
-#side-view .big-description {
-  font-family: "Fraunces";
-  font-size: 1.2rem;
-  color: #742b26;
-  text-align: center;
-  padding: 1em;
-}
-#side-view img {
-  margin: 1em;
-  width: calc(100% - 2em);
-  border-radius: 10px;
-}
-}
-#side-view img {
-  max-width: 100%;
-}
-  flex: 1 1 50%; }
 
 #side-view {
   position: sticky;
   top: 0;
-  width: 100%; }
-  #side-view img {
-    width: 100%;
-    max-width: 50vw;
-    height: auto; }
-  #side-view .big-description {
-    font-size: 1.8em;
-    color: #742b26;
-    font-family: "Fraunces";
-    text-align: center; }
+  width: 100%;
+}
+#side-view img {
+  width: 100%;
+  max-width: 50vw;
+  height: auto;
+}
+#side-view .big-description {
+  font-size: 1.8em;
+  color: #742b26;
+  font-family: "Fraunces";
+  text-align: center;
+}
 
 @media only screen and (max-width: 800px) {
   .card-container {
