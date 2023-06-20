@@ -53,7 +53,7 @@ body {
     body main .hero h1 {
       font-size: 4rem;
       text-align: center;
-      text-transform: capitalize !important;
+      text-transform: capitalize;
       padding: 1rem 0; }
 
 li {
@@ -137,7 +137,8 @@ li {
           flex-wrap: wrap;
           align-content: center;
           justify-content: space-evenly;
-          align-items: center; }
+          align-items: center;
+          max-width: 50%; }
           .card-container .card .top-card .right ul li {
             border: 1px solid #ffefdb;
             padding: 0.2em 0.4em;
@@ -190,7 +191,7 @@ li {
   height: 100vh;
   background: #ffcc00;
   border-radius: 10px;
-  z-index: 9000 !important; }
+  z-index: 9000; }
   .price-expanded h3 {
     font-size: 1.6em; }
   .price-expanded ul {
