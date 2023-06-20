@@ -102,7 +102,9 @@ li {
     gap: 1em; }
     .card-container .card p {
       font-family: "Fraunces";
-      padding: 0 1em;
+      padding: 0 0.2em;
+      color: #742b26;
+      opacity: 0.8;
       text-align: center; }
     .card-container .card .top-card {
       display: flex;
@@ -117,22 +119,22 @@ li {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between; }
+        .card-container .card .top-card .right .price-item::before {
+          content: '€'; }
         .card-container .card .top-card .right button {
           font-size: 1em;
           height: max-content;
           width: max-content;
-          padding: 0.2em;
+          padding: 0.4em;
           background: transparent;
           color: #742b26;
           border-radius: 50%;
-          border: 1px solid #742b26;
+          border: none;
           font-family: "Fraunces";
           cursor: pointer; }
-          .card-container .card .top-card .right button::before {
-            content: '€'; }
           .card-container .card .top-card .right button:hover {
             background: none;
-            border: 2px solid #742b26;
+            border-bottom: 2px solid #742b26;
             color: #742b26; }
         .card-container .card .top-card .right ul {
           display: flex;
@@ -166,7 +168,9 @@ li {
     max-width: 50vw;
     height: auto;
     max-height: calc(100vh - 6rem);
-    object-fit: cover; }
+    object-fit: cover;
+    padding: 1em 3em 3em 3em;
+    border-radius: 10px; }
   #side-view .big-description {
     font-size: 1.8em;
     line-height: 1em;

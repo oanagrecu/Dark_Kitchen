@@ -142,7 +142,9 @@ li {
 
     p {
       font-family: $serif;
-      padding: 0 1em;
+      padding: 0 0.2em;
+      color: $title-light;
+      opacity: 0.8;
       text-align: center;
     }
     .top-card {
@@ -161,25 +163,26 @@ li {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+        .price-item::before {
+          content: '€';
+        }
         button {
           font: {
             size: 1em;
           }
           height: max-content;
           width: max-content;
-          padding: 0.2em;
+          padding: 0.4em;
           background: transparent;
           color: $title-light;
           border-radius: 50%;
-          border: 1px solid $title-light;
+          border: none;
           font-family: $serif;
           cursor: pointer;
-          &::before {
-            content: '€';
-          }
+
           &:hover {
             background: none;
-            border: 2px solid $title-light;
+            border-bottom: 2px solid $title-light;
             color: $title-light;
           }
         }
@@ -223,6 +226,8 @@ li {
     height: auto;
     max-height: calc(100vh - 6rem);
     object-fit: cover;
+    padding: 1em 3em 3em 3em;
+    border-radius: 10px;
   }
   .big-description {
     font-size: 1.8em;
