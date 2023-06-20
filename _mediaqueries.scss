@@ -1,12 +1,7 @@
 //// NEW CODE //////
-/// working
-///
-///
+
 // big
 @media only screen and (max-width: 1200px) {
-  body main .hero h1 {
-    text-align: center;
-  }
   .card-container {
     width: 100%;
 
@@ -23,11 +18,9 @@
 /// comment
 // Extra small devices (phones, 800px and down) _/
 @media only screen and (max-width: 800px) {
-  .desktop-buttons span,
-  .desktop-buttons h2 {
-    display: none;
+  body main .hero h1 {
+    text-align: center;
   }
-
   .card-container {
     width: 100%;
 
