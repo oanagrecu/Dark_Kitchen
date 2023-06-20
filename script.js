@@ -77,29 +77,28 @@ function createDishCard(dish) {
   </aside>
   `;
   // Add event listener to the "Add to Cart" button
-  card
-    .querySelector('.price-item , .add-to-cart')
-    .addEventListener('click', () => {
-      const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id);
-      if (!isDishInCart) {
-        cart.push(dish);
-        updateCart();
-      }
-    });
-  return card;
+  card.querySelector(".price-item").addEventListener("click", () => {
+    const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id)
+    if (!isDishInCart) {
+      cart.push(dish)
+      updateCart()
+    }
+  })
+
+  return card
 }
 
-// ////functionality for cart ////
-// let basket = document.getElementsByClassName("fa-cart-shopping")[0]
-// basket.addEventListener("click", function () {
-//   document.getElementsByClassName("price-expanded")[0].style.display = "flex"
-// })
-// let closeBtnCart = document.getElementsByClassName("fa-circle-xmark")[0]
-// closeBtnCart.addEventListener("click", function () {
-//   document.getElementsByClassName("price-expanded")[0].style.display = "none"
-// })
+//////functionality for cart ////
+//let basket = document.getElementsByClassName("fa-cart-shopping")[0]
+//basket.addEventListener("click", function () {
+//  document.getElementsByClassName("price-expanded")[0].style.display = "flex"
+//})
+//let closeBtnCart = document.getElementsByClassName("fa-circle-xmark")[0]
+//closeBtnCart.addEventListener("click", function () {
+//  document.getElementsByClassName("price-expanded")[0].style.display = "none"
+//})
 
-///desktop navbar update ////
+/////desktop navbar update ////
 
 const desktopNav = () => {
   let desktopButtonsNav = document.createElement('div');
