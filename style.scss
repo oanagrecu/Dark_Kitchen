@@ -234,7 +234,8 @@ li {
 }
 
 .price-expanded {
-  display: flex;
+  display: none;
+  // display: flex;
   flex-flow: column wrap;
   position: absolute;
   padding: 1rem 2em;
