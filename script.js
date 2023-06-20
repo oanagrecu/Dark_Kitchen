@@ -94,12 +94,23 @@ document.querySelector('.categories ul').appendChild(showAllButton);
 
 
 //////// search bar functionality /////
-const searchForDish= document.querySelector("#searchO");
-const inputValue = document.querySelector("#inputValue");
+const searchForDish = document.querySelector("#searchO");
+
 searchForDish.addEventListener("click", searchItem);
 function searchItem(){
-  console.log(inputValue.value);
-}
+    const searchTerm = inputValue.value.toLowerCase(); 
+    document.querySelectorAll(".card").forEach((card) => {
+      const dishName = card.querySelector("h3").textContent.toLowerCase(); 
+      if (dishName.includes(searchTerm)) {
+        card.style.display = ""; }
+        else{
+       card.style.display = "none";
+      }
+      inputValue.value = ""; 
+    });
+   
+  }
+
 ///////////// dark mode toggle /////
 
 const darkModeSelect = document.getElementById('toggle-mode');
