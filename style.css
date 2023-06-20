@@ -387,8 +387,8 @@ li {
 }
 
 .footer {
-  background-color: #ffcc00;
-  color: #742b26;
+  background-color: #4e2c1c;
+  color: #ffefdb;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -398,12 +398,6 @@ li {
   padding: 1em 0 1em 0;
 }
 
-.footerelements {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .footerContainer {
   display: flex;
   justify-content: space-between;
@@ -411,7 +405,8 @@ li {
 }
 
 .links {
-  color: #742b26;
+  text-decoration: none;
+  color: #ffefdb;
   font-size: 1.9rem;
   display: flex;
 }
@@ -423,17 +418,10 @@ li {
 
 .text-dark {
   text-decoration: none;
-  color: #742b26;
+  color: #ffefdb;
+  margin-left: 4px;
 }
 
-.dark-theme {
-  background-color: #81756e;
-  color: #ffefdb;
-}
-.dark-theme #toggle-mode {
-  background-color: #ffefdb;
-  color: #81756e;
-}
 .dark-theme .card {
   background-color: #4e2c1c;
   color: #ffefdb;
