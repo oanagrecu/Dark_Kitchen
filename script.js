@@ -143,7 +143,7 @@ function updateCart() {
         </ul>
     </div>
   `;
-  // Add event listeners to the "Minus" buttons
+  ///////// Add event listeners to the "Minus" buttons
   cartElement.querySelectorAll('.minus').forEach((button) => {
     button.addEventListener('click', () => {
       const index = parseInt(button.dataset.index, 10);
