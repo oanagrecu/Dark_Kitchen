@@ -232,10 +232,11 @@ li {
 .cathegories {
   align-self: start;
 }
-
+.fa-cart-shopping{
+  padding: 0 2rem;;
+}
 .price-expanded {
   display: none;
-  // display: flex;
   flex-flow: column wrap;
   position: absolute;
   padding: 1rem 2em;
