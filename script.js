@@ -42,7 +42,9 @@ function createDishCard(dish) {
   card.classList.add("card")
   card.dataset.id = dish.id
   dish.category.forEach((category) => (card.dataset.category += " " + category))
-  const categoriesListItems = dish.category.map(category => `<li>${category}</li>`).join("");
+  const categoriesListItems = dish.category
+    .map((category) => `<li>${category}</li>`)
+    .join("")
   card.innerHTML = `
      <div class="top-card">
     <div class="left">
@@ -50,26 +52,112 @@ function createDishCard(dish) {
       <img class="product-shot" src="${dish.picture}" alt="preview menu item" />
     </div>
     <div class="right">
-      <span>
-        <i class="fa-regular fa-star"></i>
-        ${dish.rating}
-      </span>
-      <ul class="cathegories">
-      ${categoriesListItems}
-      </li>
-      </ul>
       <button class="price-item">${dish.price}</button>
+      <button class="add-to-cart">Add to cart</button>
     </div>
   </div>
   <aside class="card-expander">
   <p class="description">
-    ${dish.description}
-  </p>
+    ${dish.description} 
+      </p>
+      <div class="cat-rating">
+    <ul class="cathegories">
+    ${categoriesListItems}
+    </ul>   
+    <span>
+      <i class="fa-solid fa-star"></i>${dish.rating}
+      </span>
+ </div>
   </aside>
   `
+  // Add event listener to the "Add to Cart" button
+  card.querySelector(".price-item").addEventListener("click", () => {
+    const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id)
+    if (!isDishInCart) {
+      cart.push(dish)
+      updateCart()
+    }
+  })
+
   return card
 }
+let basket = document.getElementsByClassName("fa-cart-shopping")[0]
+basket.addEventListener("click", function () {
+  document.getElementsByClassName("price-expanded")[0].style.display = "flex"
+})
+let closeBtnCart = document.getElementsByClassName("fa-circle-xmark")[0]
+closeBtnCart.addEventListener("click", function () {
+  document.getElementsByClassName("price-expanded")[0].style.display = "none"
+})
 
+// Array for the shopping cart
+let cart = []
+
+// Update the cart display
+function updateCart() {
+  const cartElement = document.getElementById("cart")
+  cartElement.innerHTML = `
+ ${cart
+   .map(
+     (dish, index) => `
+    <div>
+    <button id="toggle-mode">DARK</button>
+    <span>Last Item <span class="last-item"> € ${dish.price} </span></span>
+    <h2>Total<span class="total"> € ${cart
+      .reduce((total, dish) => total + dish.price, 0)
+      .toFixed(2)}</span></h2>
+    <div class="price-expanded">
+      <h3>Your order</h3>
+      <i class="fa-regular fa-circle-xmark"></i>
+      <ul>
+        <li>
+        <p>${dish.name}: <span class="price-item"> $${dish.price}</span></p>
+          <span class="minus" data-index="${index}"> - </span>
+          <span class="plus" data-index="${index}"> + </span>
+        </li>    `
+   )
+   .join("")}
+        <hr />
+        <p>Total: $${cart
+          .reduce((total, dish) => total + dish.price, 0)
+          .toFixed(2)}</p>
+        <button id="checkout">Checkout</button>
+        </ul>
+    </div>
+  `
+  // Add event listeners to the "Minus" buttons
+  cartElement.querySelectorAll(".minus").forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = parseInt(button.dataset.index, 10)
+      if (cart[index].quantity > 1) {
+        cart[index].quantity--
+      } else {
+        cart.splice(index, 1)
+      }
+      updateCart()
+    })
+  })
+
+  // Add event listeners to the "Plus" buttons
+  cartElement.querySelectorAll(".plus").forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = parseInt(button.dataset.index, 10)
+      cart[index].quantity++
+      updateCart()
+    })
+  })
+
+  // Add event listener to the "Checkout" button
+  cartElement.querySelector("#checkout").addEventListener("click", () => {
+    if (cart.length > 0) {
+      alert("Thank you for your order!")
+      cart = []
+      updateCart()
+    } else {
+      alert("Your cart is empty.")
+    }
+  })
+}
 
 ///getting the dishes from the data////
 function getCategories(dishes) {
@@ -94,26 +182,26 @@ function createCategoryFilter(category) {
 
 //////// search bar functionality /////
 
-const searchForDish = document.querySelector("#searchO");
+const searchForDish = document.querySelector("#searchO")
 
-searchForDish.addEventListener("click", searchItem);
-function searchItem(){
-    const searchTerm = inputValue.value.toLowerCase(); 
-    document.querySelectorAll(".card").forEach((card) => {
-      const dishName = card.querySelector("h3").textContent.toLowerCase();
-      const dishCategory = card.querySelector(".cathegories li").textContent.toLowerCase();
-   
-      if (dishName.includes(searchTerm)||dishCategory.includes(searchTerm)) {
-        card.style.display = ""; }
-        else{
-       card.style.display = "none";
-      }
-      inputValue.value = ""; 
+searchForDish.addEventListener("click", searchItem)
+function searchItem() {
+  const searchTerm = inputValue.value.toLowerCase()
+  document.querySelectorAll(".card").forEach((card) => {
+    const dishName = card.querySelector("h3").textContent.toLowerCase()
+    const dishCategory = card
+      .querySelector(".cathegories li")
+      .textContent.toLowerCase()
+
+    if (dishName.includes(searchTerm) || dishCategory.includes(searchTerm)) {
+      card.style.display = ""
+    } else {
+      card.style.display = "none"
     }
-    );
-    
-  }
-  
+    inputValue.value = ""
+  })
+}
+
 ///////////// dark mode toggle ///////////////
 
 const darkModeSelect = document.getElementById("toggle-mode")
@@ -143,7 +231,6 @@ setTimeout(() => {
   Array.from(foodCard).forEach((card) => {
     let productShot = card.getElementsByClassName("product-shot")
     let description = card.getElementsByClassName("description")
-   
 
     Array.from(description).forEach((desc) => {
       card.addEventListener("click", (e) => {
