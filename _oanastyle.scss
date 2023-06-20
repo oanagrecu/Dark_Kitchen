@@ -20,6 +20,44 @@ $title-dark: #ffefdb;
 $text-dark: #81756e;
 $card-dark: #4e2c1c;
 
+
+// styling the footer
+.footer {
+    background-color: $card-light;
+    color: $title-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1em 0 1em 0;
+}
+.footerelements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+.links {
+    color: #742b26;
+    font-size: 1.9rem;
+    display: flex;
+}
+.copyright {
+    display: flex;
+    align-items: center;
+}
+.text-dark {
+    text-decoration: none;
+    color: #742b26;
+}
+
+//////////dark theme ////
 .dark-theme {
     background-color: #81756e;
     color: #ffefdb;
