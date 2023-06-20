@@ -93,13 +93,33 @@ function createCategoryFilter(category) {
 }
 
 //////// search bar functionality /////
+
+const searchForDish = document.querySelector("#searchO");
+
+searchForDish.addEventListener("click", searchItem);
+function searchItem(){
+    const searchTerm = inputValue.value.toLowerCase(); 
+    document.querySelectorAll(".card").forEach((card) => {
+      const dishName = card.querySelector("h3").textContent.toLowerCase(); 
+      if (dishName.includes(searchTerm)) {
+        card.style.display = ""; }
+        else{
+       card.style.display = "none";
+      }
+      inputValue.value = ""; 
+    });
+   
+  }
+
+
 const searchForDish = document.querySelector("#searchO")
 const inputValue = document.querySelector("#inputValue")
 searchForDish.addEventListener("click", searchItem)
 function searchItem() {
   console.log(inputValue.value)
 }
-///////////// dark mode toggle /////
+
+///////////// dark mode toggle ///////////////
 
 const darkModeSelect = document.getElementById("toggle-mode")
 darkModeSelect.addEventListener("click", function () {
@@ -115,7 +135,7 @@ darkModeSelect.addEventListener("click", function () {
   darkModeSelect.textContent = newTheme
 })
 
-// add
+///////////////////// aside image functionality /////////////
 let prevClick = null
 let prevImg = null
 let bigImg = document.querySelector("#side-view big-img")
@@ -132,16 +152,6 @@ setTimeout(() => {
     const darkModeSelect = document.getElementById("toggle-mode")
     darkModeSelect.addEventListener("click", function () {
       var body = document.body
-
-      // Toggle the theme classes on the body
-      body.classList.toggle("dark-theme")
-      body.classList.toggle("light-theme")
-
-      // Toggle the button text
-      var currentTheme = darkModeSelect.textContent
-      var newTheme = currentTheme === "DARK" ? "LIGHT" : "DARK"
-      darkModeSelect.textContent = newTheme
-    })
 
     ///
 

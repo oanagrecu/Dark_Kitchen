@@ -211,6 +211,20 @@ li {
 
 #side-view {
   position: fixed;
+  margin-top: -3rem;
+}
+#side-view .big-description {
+  font-family: "Fraunces";
+  font-size: 1.2rem;
+  color: #742b26;
+  text-align: center;
+  padding: 1em;
+}
+#side-view img {
+  margin: 1em;
+  width: calc(100% - 2em);
+  border-radius: 10px;
+}
 }
 #side-view img {
   max-width: 100%;
