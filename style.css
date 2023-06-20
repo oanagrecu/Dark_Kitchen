@@ -2,8 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 :root {
   --font-fraunces: 'Fraunces', serif;
@@ -17,8 +16,8 @@ html {
     border-bottom: 2px solid #742b26; }
 
 body {
-  background: linear-gradient(0deg, rgb(255, 242, 188), rgb(255, 226, 190));
-}
+  background: -webkit-linear-gradient(0deg, #fff2bc, #ffe2be);
+  background: linear-gradient(0deg, #fff2bc, #ffe2be); }
 
 p {
   font-family: "Libre Franklin"; }
@@ -55,8 +54,7 @@ header {
 img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-}
+  border-radius: 10px; }
 
 body main {
   display: flex;
@@ -89,8 +87,7 @@ body main {
       text-shadow: rgba(255, 226, 190, 0.95) 1px 0 10px; }
 
 li {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 .categories {
   flex: 1 1 100%;
@@ -267,8 +264,7 @@ li {
   flex: 1 1 50%;
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
-}
+  justify-content: space-between; }
 
 #side-view {
   position: sticky;
@@ -301,15 +297,13 @@ li {
   color: #742b26; }
 
 .cathegories {
-  align-self: start;
-}
+  align-self: start; }
 
 .fa-cart-shopping {
-  padding: 0 2rem;
-}
+  padding: 0 2rem; }
 
 .price-expanded {
-  display: none;
+  visibility: hidden;
   flex-flow: row wrap;
   position: fixed;
   top: 0;
@@ -324,10 +318,9 @@ li {
   height: 100vh;
   background: #ffcc00;
   border-radius: 10px;
+  opacity: 0;
   z-index: 9000;
-  transition-property: opacity, left, top, height, display;
-  transition-duration: 3s, 5s;
-  transition: 1s ease; }
+  transition: visibility 0.3s linear, opacity 0.3s linear; }
   .price-expanded h3 {
     font-size: 1.6em; }
   .price-expanded ul {
@@ -335,10 +328,11 @@ li {
     .price-expanded ul li .price-item {
       padding: 2em 2em; }
 
-@media only screen and (max-width: 1200px) {
-  body main .hero h1 {
-    text-align: center; }
+.active {
+  visibility: visible;
+  opacity: 1; }
 
+@media only screen and (max-width: 1200px) {
   .card-container {
     width: 100%;
     flex: 1 1 100%; }
@@ -348,9 +342,8 @@ li {
   #side-view {
     display: none; } }
 @media only screen and (max-width: 800px) {
-  .desktop-buttons span,
-  .desktop-buttons h2 {
-    display: none; }
+  body main .hero h1 {
+    text-align: center; }
 
   .card-container {
     width: 100%;
@@ -376,10 +369,8 @@ li {
       flex: 1 1 100%; }
 
   #side-view {
-    display: none;
-  }
-}
-
+    display: none; } }
+/*# sourceMappingURL=style.css.map */
 /* Dark Theme */
 :root {
   --font-fraunces: "Fraunces", serif;
@@ -394,45 +385,34 @@ li {
   align-items: center;
   font-size: 1.6rem;
   width: 100%;
-  padding: 1em 0 1em 0;
-}
+  padding: 1em 0 1em 0; }
 
 .footerContainer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1em;
-}
+  margin-bottom: 1em; }
 
 .links {
   text-decoration: none;
   color: #ffefdb;
   font-size: 1.9rem;
-  display: flex;
-}
+  display: flex; }
 
 .copyright {
   display: flex;
-  align-items: center;
-}
+  align-items: center; }
 
 .text-dark {
   text-decoration: none;
   color: #ffefdb;
-  margin-left: 4px;
-}
+  margin-left: 4px; }
 
-.dark-theme {
-  background-color: #81756e;
+.dark-theme .card {
+  background-color: #4e2c1c;
   color: #ffefdb; }
-  .dark-theme #toggle-mode {
-    background-color: #ffefdb;
-    color: #81756e; }
-  .dark-theme .card {
-    background-color: #4e2c1c;
-    color: #ffefdb; }
-  .dark-theme h1 {
-    color: #ffefdb; }
-  .dark-theme .card-container .card .top-card .left h3 {
-    color: #ffefdb; }
+.dark-theme h1 {
+  color: #ffefdb; }
+.dark-theme .card-container .card .top-card .left h3 {
+  color: #ffefdb; }
 
 /*# sourceMappingURL=style.css.map */
