@@ -10,6 +10,10 @@
 
 html {
   font-family: "Fraunces"; }
+  html h2 {
+    border-radius: 50%;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid #742b26; }
 
 body {
   background: -webkit-linear-gradient(0deg, #fff2bc, #ffe2be);
@@ -57,13 +61,27 @@ body main {
     display: flex;
     flex-flow: row wrap;
     justify-content: center; }
-  body main .hero h1 {
-    font-size: 4rem;
-    text-align: center;
-    color: #742b26;
-    text-transform: capitalize;
-    opacity: 0.9;
-    padding: 1rem 0; }
+  body main .hero {
+    width: calc(100vw - 4em);
+    background-image: url("assets/hero-image.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
+    box-shadow: -1px -2px 114px 22px rgba(255, 226, 190, 0.95) inset;
+    -webkit-box-shadow: -1px -2px 114px 22px rgba(255, 226, 190, 0.95) inset;
+    -moz-box-shadow: -1px -2px 114px 22px rgba(255, 226, 190, 0.95) inset;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body main .hero h1 {
+      font-size: 4rem;
+      color: #742b26;
+      text-transform: capitalize;
+      opacity: 0.9;
+      padding: 1rem 0;
+      text-shadow: rgba(255, 226, 190, 0.95) 1px 0 10px; }
 
 li {
   list-style-type: none; }

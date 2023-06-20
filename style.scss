@@ -40,6 +40,11 @@ html {
   font : {
     family: $serif;
   }
+  h2 {
+    border-radius: 50%;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid $title-light;
+  }
 }
 body {
   background: -webkit-linear-gradient(
@@ -96,13 +101,27 @@ body {
       justify-content: center;
     }
     .hero {
+      width: calc(100vw - 4em);
+      background-image: url('assets/hero-image.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 40vh;
+      box-shadow: -1px -2px 114px 22px rgba(255, 226, 190, 0.95) inset;
+      -webkit-box-shadow: -1px -2px 114px 22px rgba(255, 226, 190, 0.95) inset;
+      -moz-box-shadow: -1px -2px 114px 22px rgba(255, 226, 190, 0.95) inset;
+
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       h1 {
         font-size: 4rem;
-        text-align: center;
         color: $title-light;
         text-transform: capitalize;
         opacity: 0.9;
         padding: 1rem 0;
+        text-shadow: rgba(255, 226, 190, 0.95) 1px 0 10px;
       }
     }
   }
