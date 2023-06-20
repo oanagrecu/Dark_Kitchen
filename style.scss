@@ -46,14 +46,16 @@ header {
     div {
       display: flex;
       font-size: 1.6rem;
+      align-items: flex-start;
 
       span,
       h2 {
         font-size: 1.2rem;
+        padding-left: 0.4em;
       }
       button {
         border: none;
-        padding: 0 0.6rem;
+        padding: 0.6rem 0.8rem;
         border-radius: 10px;
         background: $bg-dark;
         font-size: 0.8rem;
@@ -83,7 +85,8 @@ body {
     }
     .hero {
       h1 {
-        font-size: 3em;
+        font-size: 4rem;
+        text-align: center;
         text-transform: capitalize !important;
         padding: 1rem 0;
       }
@@ -104,10 +107,11 @@ li {
     flex-flow: row wrap;
     justify-content: center;
     gap: 1em;
-    li {
+    li button {
       color: $offwhite;
       padding: 0.4em;
       background: $bg-dark;
+      border: none;
       border-radius: 10px;
     }
   }
@@ -125,7 +129,7 @@ li {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  flex: 1 1 calc(60% - 4em);
+  flex: 1 1 calc(50% - 4em);
   padding: 1em;
   gap: 1em;
 
@@ -173,12 +177,20 @@ li {
             color: $title-light;
           }
         }
-        ul li {
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+          li {
           border: none;
           padding: 0.4em 1em;
           border-radius: 10px;
           background: $bg-dark;
           color: $offwhite;
+          }
         }
       }
     }
@@ -186,26 +198,26 @@ li {
 }
 .card-expander {
   width: 100%;
-  flex: 1 1 calc(40% - 4em);
+  flex: 1 1 50%;
+}
+#side-view {
+  position: sticky;
+  top: 0;
+  width: 100%;
+
+  img {
+    width: 100%;
+    max-width: 50vw;
+    height: auto;
+  }
+  .big-description {
+    font-size: 1.8em;
+    color: $title-light;
+    font-family: $serif;
+    text-align: center;
+  }
 }
 
-#side-view {
-  padding: 1em;
-  position: fixed;
-  margin-top: -3rem;
-  .big-description {
-    font-family: $serif;
-    font-size: 1.2rem;
-    color: $title-light;
-    text-align: center;
-    padding: 1em;
-  }
-  img {
-    margin: 1em;
-    width: calc(100% - 2em);
-    border-radius: 10px;
-  }
-}
 // import mediaqueries
 @import 'mediaqueries';
 @import 'oanastyle';

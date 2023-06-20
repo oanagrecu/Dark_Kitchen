@@ -44,6 +44,27 @@ header nav div button {
 header nav .price-expanded {
   display: none;
 }
+  font-size: 1.6em; }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    color: #742b26; }
+    header nav div {
+      display: flex;
+      font-size: 1.6rem;
+      align-items: flex-start; }
+      header nav div span,
+      header nav div h2 {
+        font-size: 1.2rem;
+        padding-left: 0.4em; }
+      header nav div button {
+        border: none;
+        padding: 0.6rem 0.8rem;
+        border-radius: 10px;
+        background: #81756e;
+        font-size: 0.8rem; }
+    header nav .price-expanded {
+      display: none; }
 
 img {
   width: 100%;
@@ -66,9 +87,24 @@ body main .content {
 }
 body main .hero h1 {
   font-size: 3em;
+  text-align: center;
   text-transform: capitalize !important;
   padding: 1rem 0;
 }
+  background: #ffefdb; }
+  body main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; }
+    body main .content {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center; }
+    body main .hero h1 {
+      font-size: 4rem;
+      text-align: center;
+      text-transform: capitalize !important;
+      padding: 1rem 0; }
 
 li {
   list-style-type: none;
@@ -85,10 +121,11 @@ li {
   justify-content: center;
   gap: 1em;
 }
-.categories ul li {
+.categories ul li button {
   color: #ffefdb;
   padding: 0.4em;
   background: #81756e;
+  border: none;
   border-radius: 10px;
 }
 
@@ -105,7 +142,7 @@ li {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  flex: 1 1 calc(60% - 4em);
+  flex: 1 1 calc(50% - 4em);
   padding: 1em;
   gap: 1em;
 }
@@ -151,6 +188,14 @@ li {
   border: 2px solid #742b26;
   color: #742b26;
 }
+.card-container .card .top-card .right ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
 .card-container .card .top-card .right ul li {
   border: none;
   padding: 0.4em 1em;
@@ -165,7 +210,6 @@ li {
 }
 
 #side-view {
-  padding: 1em;
   position: fixed;
   margin-top: -3rem;
 }
@@ -181,6 +225,25 @@ li {
   width: calc(100% - 2em);
   border-radius: 10px;
 }
+}
+#side-view img {
+  max-width: 100%;
+}
+  flex: 1 1 50%; }
+
+#side-view {
+  position: sticky;
+  top: 0;
+  width: 100%; }
+  #side-view img {
+    width: 100%;
+    max-width: 50vw;
+    height: auto; }
+  #side-view .big-description {
+    font-size: 1.8em;
+    color: #742b26;
+    font-family: "Fraunces";
+    text-align: center; }
 
 @media only screen and (max-width: 800px) {
   .card-container {
@@ -189,6 +252,18 @@ li {
   }
   .card-container .card {
     flex: 1 1 100%;
+  }
+  #side-view {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .card-container {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .card-container .card {
+    flex: 1 1 calc(50% - 6em);
   }
   #side-view {
     display: none;
