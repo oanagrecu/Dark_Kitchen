@@ -56,7 +56,6 @@ function createDishCard(dish) {
       </span>
       <ul class="cathegories">
       ${categoriesListItems}
-      </li>
       </ul>
       <button class="price-item">${dish.price}</button>
     </div>
@@ -67,9 +66,64 @@ function createDishCard(dish) {
   </p>
   </aside>
   `
+ // Add event listener to the "Add to Cart" button
+ card.querySelector(".price-item").addEventListener("click", () => {
+    const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id)
+    if (!isDishInCart) {
+      cart.push(dish)
+      updateCart()
+    }
+  })
+
   return card
 }
 
+//// Array for the shopping cart
+//let cart = []
+
+//// Update the cart display
+//function updateCart() {
+//    const cartElement = document.getElementById('cart');
+//    cartElement.innerHTML = `
+// ${cart.map((dish, index) => `
+//    <div>
+//    <button id="toggle-mode">DARK</button>
+//    <span>Last Item <span class="last-item"> € ${dish.price} </span></span>
+//    <h2>Total<span class="total"> € ${cart.reduce((total, dish) => total + dish.price, 0).toFixed(2)}</span></h2>
+//    <div class="price-expanded">
+//      <h3>Your order</h3>
+//      <ul>
+//        <li>
+//        <p>${dish.name}: <span class="price-item"> $${dish.price}</span></p>
+//          <span class="minus" data-index="${index}"> - </span>
+//          <span class="plus" data-index="${index}"> + </span>
+//        </li>    `).join('')}
+//        <hr />
+//        <p>Total: $${cart.reduce((total, dish) => total + dish.price, 0).toFixed(2)}</p>
+//        <button id="checkout">Checkout</button>
+//        </ul>
+//    </div>    
+//  `;
+//    // Add event listeners to the "Remove" buttons
+//    cartElement.querySelectorAll('.remove-from-cart').forEach((button) => {
+//        button.addEventListener('click', () => {
+//          const index = parseInt(button.dataset.index, 10);
+//          cart.splice(index, 1);
+//          updateCart();
+//        });
+//      });
+    
+//      // Add event listener to the "Checkout" button
+//      cartElement.querySelector('#checkout').addEventListener('click', () => {
+//        if (cart.length > 0) {
+//          alert('Thank you for your order!');
+//          cart = [];
+//          updateCart();
+//        } else {
+//          alert('Your cart is empty.');
+//        }
+//      });
+//    }
 
 ///getting the dishes from the data////
 function getCategories(dishes) {
