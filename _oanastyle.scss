@@ -55,17 +55,18 @@ $card-dark: #4e2c1c;
 
 //////////dark theme ////
 .dark-theme {
+    // body:
     // #toggle-mode {
-    //     background-color: $title-dark;
-    //     color: $text-dark;
+    //     background-color: $title-light;
+    //     color: $text-light;
     // }
     // header {
-    //     background-color: $bg-dark;
+    //     background-color: $bg-light;
     //     color: $text-dark;
     // }
-    // header .desktop h2 {
-    //     color: $text-dark;
-    // }
+    header .desktop h2 {
+        color: $card-dark;
+    }
     .card {
         background-color: #4e2c1c;
         color: #ffefdb;
