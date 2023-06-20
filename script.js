@@ -52,18 +52,19 @@ function createDishCard(dish) {
       <img class="product-shot" src="${dish.picture}" alt="preview menu item" />
     </div>
     <div class="right">
-      <span>
-      <i class="fa-solid fa-star"></i>${dish.rating}
-      </span>
-      <ul class="cathegories">
-      ${categoriesListItems}
-      </ul>
       <button class="price-item">${dish.price}</button>
+      <button class="add-to-cart">Add to cart</button>
     </div>
   </div>
   <aside class="card-expander">
   <p class="description">
-    ${dish.description}
+    ${dish.description}  
+    <ul class="cathegories">
+    ${categoriesListItems}
+    </ul>   
+    <span>
+      <i class="fa-solid fa-star"></i>${dish.rating}
+      </span>
   </p>
   </aside>
   `
