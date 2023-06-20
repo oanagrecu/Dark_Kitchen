@@ -53,8 +53,7 @@ function createDishCard(dish) {
     </div>
     <div class="right">
       <span>
-        <i class="fa-regular fa-star"></i>
-        ${dish.rating}
+      <i class="fa-solid fa-star"></i>${dish.rating}
       </span>
       <ul class="cathegories">
       ${categoriesListItems}
@@ -83,11 +82,10 @@ let basket = document.getElementsByClassName("fa-cart-shopping")[0]
 basket.addEventListener("click", function () {
   document.getElementsByClassName("price-expanded")[0].style.display = "flex"
 })
-let closeBtnCart= document.getElementsByClassName("fa-circle-xmark")[0]
-closeBtnCart.addEventListener("click", function (){
-    document.getElementsByClassName("price-expanded")[0].style.display = "none"
+let closeBtnCart = document.getElementsByClassName("fa-circle-xmark")[0]
+closeBtnCart.addEventListener("click", function () {
+  document.getElementsByClassName("price-expanded")[0].style.display = "none"
 })
-
 
 // Array for the shopping cart
 let cart = []
@@ -122,7 +120,7 @@ let cart = []
 //          .toFixed(2)}</p>
 //        <button id="checkout">Checkout</button>
 //        </ul>
-//    </div>    
+//    </div>
 //  `
 //  // Add event listeners to the "Minus" buttons
 //  cartElement.querySelectorAll(".minus").forEach((button) => {
@@ -157,8 +155,6 @@ let cart = []
 //    }
 //  })
 //}
-
-
 
 ///getting the dishes from the data////
 function getCategories(dishes) {
