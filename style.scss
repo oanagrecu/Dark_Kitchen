@@ -24,10 +24,30 @@ $title-dark: #ffefdb;
 $text-dark: #81756e;
 $card-dark: #4e2c1c;
 
+@mixin cat-button {
+  font-family: $serif;
+  color: $offwhite;
+  padding: 0.4em;
+  font-size: 0.8rem;
+  background: $title-light;
+  border: none;
+  border-radius: 10px;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 html {
   font : {
     family: $serif;
   }
+}
+body {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(255, 242, 188),
+    rgb(255, 226, 190)
+  );
+  background: linear-gradient(0deg, rgb(255, 242, 188), rgb(255, 226, 190));
 }
 
 p {
@@ -54,11 +74,7 @@ header {
         padding-left: 0.4em;
       }
       button {
-        border: none;
-        padding: 0.6rem 0.8rem;
-        border-radius: 10px;
-        background: $bg-dark;
-        font-size: 0.8rem;
+        @include cat-button();
       }
     }
   }
@@ -70,7 +86,6 @@ img {
   border-radius: 10px;
 }
 body {
-  background: $bg-light;
   main {
     display: flex;
     flex-flow: row wrap;
@@ -84,7 +99,9 @@ body {
       h1 {
         font-size: 4rem;
         text-align: center;
+        color: $title-light;
         text-transform: capitalize;
+        opacity: 0.9;
         padding: 1rem 0;
       }
     }
@@ -105,11 +122,7 @@ li {
     justify-content: center;
     gap: 1em;
     li button {
-      color: $offwhite;
-      padding: 0.4em;
-      background: $bg-dark;
-      border: none;
-      border-radius: 10px;
+      @include cat-button();
     }
   }
 }
@@ -118,9 +131,19 @@ li {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-content: center;
   flex: 1 1 100%;
   width: 100%;
-  padding: 0 0 1em 0;
+  color: $title-light;
+  input {
+    @include cat-button();
+    padding: 0.4em 2em;
+    opacity: 0.4;
+  }
+  i {
+    padding: 0.3em;
+    cursor: pointer;
+  }
 }
 .card-container {
   width: 100%;
@@ -132,7 +155,17 @@ li {
 
   .card {
     flex: 1 1 calc(50% - 4em);
-    background: $card-light;
+    // background: $card-light;
+
+    -webkit-box-shadow: 10px 10px 35px -22px rgba(116, 43, 38, 1);
+    -moz-box-shadow: 10px 10px 35px -22px rgba(116, 43, 38, 1);
+    box-shadow: 10px 10px 35px -22px rgba(116, 43, 38, 1);
+    background: rgba(255, 255, 255, 0.25);
+    // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 10px;
     height: auto;
     padding: 1em;
@@ -209,9 +242,34 @@ li {
     }
   }
 }
+
+.cat-rating {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 1em;
+  align-content: center;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    li {
+      margin-right: 0.2em;
+
+      @include cat-button();
+      opacity: 0.9;
+    }
+  }
+  span {
+    color: $title-light;
+    opacity: 0.9;
+  }
+}
 .card-expander {
   width: 100%;
   flex: 1 1 50%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 #side-view {
   position: sticky;
