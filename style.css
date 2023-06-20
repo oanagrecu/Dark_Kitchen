@@ -6,12 +6,12 @@
 }
 
 :root {
-  --font-fraunces: "Fraunces", serif;
-  --font-libre: "Libre Franklin", sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-libre: 'Libre Franklin', sans-serif;
 }
 
 html {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
 }
 html h2 {
   border-radius: 50%;
@@ -20,11 +20,12 @@ html h2 {
 }
 
 body {
-  background: linear-gradient(0deg, rgb(255, 242, 188), rgb(255, 226, 190));
+  background: -webkit-linear-gradient(0deg, #fff2bc, #ffe2be);
+  background: linear-gradient(0deg, #fff2bc, #ffe2be);
 }
 
 p {
-  font-family: "Libre Franklin";
+  font-family: 'Libre Franklin';
 }
 
 header {
@@ -47,7 +48,7 @@ header nav div h2 {
   padding-left: 0.4em;
 }
 header nav div button {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -80,7 +81,7 @@ body main .content {
 }
 body main .hero {
   width: calc(100vw - 4em);
-  background-image: url("assets/hero-image.jpg");
+  background-image: url('assets/hero-image.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -118,7 +119,7 @@ li {
   gap: 1em;
 }
 .categories ul li button {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -143,7 +144,7 @@ li {
   color: #742b26;
 }
 .search-bar input {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -198,7 +199,7 @@ li {
   gap: 1em;
 }
 .card-container .card p {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   padding: 0 0.2em;
   color: #742b26;
   opacity: 0.8;
@@ -221,7 +222,7 @@ li {
   justify-content: space-between;
 }
 .card-container .card .top-card .right .price-item::before {
-  content: "€";
+  content: '€';
 }
 .card-container .card .top-card .right button {
   font-size: 1em;
@@ -234,7 +235,7 @@ li {
   color: #742b26;
   border-radius: 50%;
   border: none;
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   cursor: pointer;
 }
 .card-container .card .top-card .right button:hover {
@@ -281,7 +282,7 @@ li {
 }
 .cat-rating ul li {
   margin-right: 0.2em;
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -323,7 +324,7 @@ li {
   height: auto;
   max-height: calc(100vh - 10rem);
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 10px;
 }
 #side-view .big-description {
@@ -331,7 +332,7 @@ li {
   line-height: 1em;
   padding: 0.4em 2em;
   color: #742b26;
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   text-align: center;
 }
 
@@ -340,7 +341,7 @@ li {
   text-align: center;
   line-height: 1.2em;
   padding: 1.2em;
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #742b26;
 }
 
@@ -353,7 +354,7 @@ li {
 }
 
 .price-expanded {
-  display: none;
+  visibility: hidden;
   flex-flow: row wrap;
   position: fixed;
   top: 0;
@@ -368,6 +369,7 @@ li {
   height: 100vh;
   background: #ffcc00;
   border-radius: 10px;
+  opacity: 0;
   z-index: 9000;
   transition-property: opacity, left, top, height, display;
   transition-duration: 3s, 5s;
@@ -381,6 +383,11 @@ li {
 }
 .price-expanded ul li .price-item {
   padding: 2em 2em;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -430,11 +437,11 @@ li {
     display: none;
   }
 }
-
+/*# sourceMappingURL=style.css.map */
 /* Dark Theme */
 :root {
-  --font-fraunces: "Fraunces", serif;
-  --font-libre: "Libre Franklin", sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-libre: 'Libre Franklin', sans-serif;
 }
 
 .footer {
@@ -485,4 +492,4 @@ li {
 }
 .dark-theme .card-container .card .top-card .left h3 {
   color: #ffefdb;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

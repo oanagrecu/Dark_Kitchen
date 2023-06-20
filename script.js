@@ -164,17 +164,17 @@ function updateCart() {
     </ul>`;
 
   // Add event listeners to the "Minus" buttons
-  cartElement.querySelectorAll(".minus").forEach((button) => {
-    button.addEventListener("click", () => {
-      const index = parseInt(button.dataset.index, 10)
+  cartElement.querySelectorAll('.minus').forEach((button) => {
+    button.addEventListener('click', () => {
+      const index = parseInt(button.dataset.index, 10);
       if (cart[index].quantity > 1) {
-        cart[index].quantity--
+        cart[index].quantity--;
       } else {
-        cart.splice(index, 1)
+        cart.splice(index, 1);
       }
-      updateCart()
-    })
-  })
+      updateCart();
+    });
+  });
 
   // Add event listeners to the "Plus" buttons
   cartElement.querySelectorAll(".plus").forEach((button) => {
@@ -194,7 +194,7 @@ function updateCart() {
     } else {
       alert("Please add dishes to your basket.")
     }
-  })
+  });
 }
 
 function updateNavbar() {
