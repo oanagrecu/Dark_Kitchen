@@ -84,7 +84,7 @@ body {
       h1 {
         font-size: 4rem;
         text-align: center;
-        text-transform: capitalize;
+        text-transform: capitalize !important;
         padding: 1rem 0;
       }
     }
@@ -163,20 +163,17 @@ li {
         justify-content: space-between;
         button {
           font: {
-            size: 1em;
+            size: 1.2em;
           }
-          height: max-content;
-          width: max-content;
+          height: 3em;
+          width: 3em;
           padding: 0.2em;
-          background: transparent;
-          color: $title-light;
-          border-radius: 50%;
-          border: 1px solid $title-light;
+          background: $title-light;
+          color: $offwhite;
+          border-radius: 10px;
+          border: none;
           font-family: $serif;
           cursor: pointer;
-          &::before {
-            content: '€';
-          }
           &:hover {
             background: none;
             border: 2px solid $title-light;
@@ -190,11 +187,9 @@ li {
           align-content: center;
           justify-content: space-evenly;
           align-items: center;
-          max-width: 50%;
           li {
             border: 1px solid $offwhite;
             padding: 0.2em 0.4em;
-            margin: 0.2em;
             border-radius: 10px;
 
             color: $offwhite;
@@ -237,11 +232,10 @@ li {
 .cathegories {
   align-self: start;
 }
-.fa-cart-shopping {
-  padding: 0 2rem;
-}
+
 .price-expanded {
   display: none;
+  // display: flex;
   flex-flow: column wrap;
   position: absolute;
   padding: 1rem 2em;
@@ -254,7 +248,6 @@ li {
   height: 100vh;
   background: $card-light;
   border-radius: 10px;
-  z-index: 9000;
   h3 {
     font-size: 1.6em;
   }
