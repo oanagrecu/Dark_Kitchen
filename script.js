@@ -32,9 +32,8 @@ function handleData(data) {
     });
   });
 }
-// Array for the shopping cart
-let cart = [];
-console.log(cart);
+
+
 ////create a card for each dish from data ////
 function createDishCard(dish) {
   const card = document.createElement('div');
@@ -71,79 +70,98 @@ function createDishCard(dish) {
  </div>
   </aside>
   `;
-  // Add event listener to the "Add to Cart" button
-  card
-    .querySelector('.price-item , .add-to-cart')
-    .addEventListener('click', () => {
-      const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id);
-      if (!isDishInCart) {
-        cart.push(dish);
-        updateCart();
-      }
-    });
+ // Add event listener to the "Add to Cart" and "Price" button
+ const addToCartButton = card.querySelector('.add-to-cart');
+ const priceButton = card.querySelector('.price-item');
+ 
+ addToCartButton.addEventListener('click', () => addToCart(dish));
+ priceButton.addEventListener('click', () => addToCart(dish));
+
   return card;
 }
 
-////functionality for cart ////
-let basket = document.getElementsByClassName('fa-cart-shopping')[0];
-basket.addEventListener('click', function () {
-  document.getElementsByClassName('price-expanded')[0].style.display = 'flex';
-});
-let closeBtnCart = document.getElementsByClassName('fa-circle-xmark')[0];
-closeBtnCart.addEventListener('click', function () {
-  document.getElementsByClassName('price-expanded')[0].style.display = 'none';
-});
+function addToCart(dish) {
+  // Find if the dish already exists in the cart
+  const existingDish = cart.find(item => item.name === dish.name);
 
-/////desktop navbar update ////
+  if (existingDish) {
+    // If dish already exists in the cart, increment the quantity
+    existingDish.quantity += 1;
+  } else {
+    // If dish doesn't exist in the cart, add it with a quantity of 1
+    cart.push({
+      ...dish,
+      quantity: 1,
+    });
+  }
+
+  // Update the cart and navbar
+  updateCart();
+  updateNavbar();
+}
+
+
+window.onload = function() {
+  ////functionality for cart ////
+  let basket = document.getElementsByClassName('fa-cart-shopping')[0];
+  basket.addEventListener('click', function () {
+    document.getElementsByClassName('price-expanded')[0].style.display = 'flex';
+  });
+  let closeBtnCart = document.getElementsByClassName('fa-circle-xmark')[0];
+  closeBtnCart.addEventListener('click', function () {
+    document.getElementsByClassName('price-expanded')[0].style.display = 'none';
+  });
+};
+
 
 const desktopNav = () => {
-    let desktopButtonsNav = document.createElement("div")
-    desktopButtonsNav.classList.add("desktop-buttons")
-    desktopButtonsNav.innerHTML = `
-    <button id="toggle-mode">DARK</button>
-    <span>Last Item <span class="last-item"> € ${dish.price} </span></span>
-    <h2>Total<span class="total"> € ${cart
-      .reduce((total, dish) => total + dish.price, 0)
-      .toFixed(2)}</span></h2>
-      <i class="fa-solid fa-cart-shopping"></i>       
-         <div class="price-expanded">
-            <h3>Your order</h3>
-            <i class="fa-regular fa-circle-xmark"></i>
-            <p>Nothing in your cart yet
-              Go back and add stuff!
-            </p>
-            </div>`
-   let navbarDesktop = document.getElementById("desktop")
-    navbarDesktop.appendChild(desktopNav)
-} 
+  let desktopButtonsNav = document.createElement("div");
+  desktopButtonsNav.classList.add("desktop-buttons");
+  desktopButtonsNav.innerHTML = `
+  <button id="toggle-mode">DARK</button>
+  <span>Last Item <span class="last-item"> € 0.00 </span></span>
+  <h2>Total<span class="total"> € 0.00</span></h2>
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span class="cart-item-count">0</span>       
+  <div class="price-expanded">
+    <h3>Your order</h3>
+    <i class="fa-regular fa-circle-xmark"></i>
+    <div id="cart">
+    <p>Nothing in your cart yet
+      Go back and add stuff!
+    </p>
+    </div>  
+    </div>`;
+  let navbarDesktop = document.getElementById("desktop");
+  navbarDesktop.appendChild(desktopButtonsNav);
+};
 
+let cart = []; // Define cart as an empty array at the beginning
 
-/////update the cart////////
 function updateCart() {
   const cartElement = document.getElementById('cart');
+  // Display the cart contents
+  const cartContents = cart.map((dish, index) => `
+  <li>
+    <p>${dish.name}: <span class="price-item">€ ${dish.price}</span></p>
+    <span class="minus" data-index="${index}"> - </span>
+    <span class="plus" data-index="${index}"> + </span>
+  </li>`).join("");
+
+  let totalPrice = cart.reduce((total, dish) => total + dish.price, 0).toFixed(2);
+
   cartElement.innerHTML = `
- ${cart
-   .map(
-     (dish, index) => `
-    <div class="price-expanded">
-      <h3>Your order</h3>
-      <i class="fa-regular fa-circle-xmark"></i>
-      <ul>
-        <li>
-        <p>${dish.name}: <span class="price-item"> $${dish.price}</span></p>
-          <span class="minus" data-index="${index}"> - </span>
-          <span class="plus" data-index="${index}"> + </span>
-        </li>    `
-   )
-   .join("")}
-        <hr />
-        <p>Total: $${cart
-          .reduce((total, dish) => total + dish.price, 0)
-          .toFixed(2)}</p>
-        <button id="checkout">Checkout</button>
-        </ul>
-    </div>
-  `
+  <div class="price-expanded">
+    <h3>Your order</h3>
+    <i class="fa-regular fa-circle-xmark"></i>
+    <ul>
+      ${cartContents}
+      <hr />
+      <p>Total: € ${totalPrice}</p>
+      <button id="checkout">Checkout</button>
+    </ul>
+  </div>`;
+
   // Add event listeners to the "Minus" buttons
   cartElement.querySelectorAll(".minus").forEach((button) => {
     button.addEventListener("click", () => {
@@ -166,7 +184,6 @@ function updateCart() {
     })
   })
 
-
   // Add event listener to the "Checkout" button
   cartElement.querySelector('#checkout').addEventListener('click', () => {
     if (cart.length > 0) {
@@ -178,6 +195,28 @@ function updateCart() {
     }
   })
 }
+
+function updateNavbar() {
+  const lastItemElement = document.querySelector('.last-item');
+  const totalElement = document.querySelector('.total');
+  const cartItemCountElement = document.querySelector('.cart-item-count');
+  
+  const totalPrice = cart.reduce((total, dish) => total + dish.price, 0).toFixed(2);
+  const lastItem = cart[cart.length - 1];
+  
+  lastItemElement.textContent = `€ ${lastItem ? lastItem.price : 0.00}`;
+  totalElement.textContent = `€ ${totalPrice}`;
+  cartItemCountElement.textContent = cart.length;
+}
+
+// Call desktopNav function once when the script is loaded
+desktopNav();
+
+
+
+
+
+
 
 ///getting the dishes from the data////
 function getCategories(dishes) {
@@ -196,9 +235,6 @@ function createCategoryFilter(category) {
   return li.outerHTML;
 }
 
-const dishes = // get your dishes data from somewhere
-dishes.forEach(dish => createDishCard(dish))
-desktopNav()
 
 
 //////// search bar functionality /////
