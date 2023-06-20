@@ -101,11 +101,13 @@ window.onload = function () {
   ////functionality for cart ////
   let basket = document.getElementsByClassName("fa-cart-shopping")[0]
   basket.addEventListener("click", function () {
-    document.getElementsByClassName("price-expanded")[0].style.display = "flex"
+    document.getElementsByClassName('price-expanded')[0].classList.add('active');
   })
   let closeBtnCart = document.getElementsByClassName("fa-circle-xmark")[0]
   closeBtnCart.addEventListener("click", function () {
-    document.getElementsByClassName("price-expanded")[0].style.display = "none"
+    document
+    .getElementsByClassName('price-expanded')[0]
+    .classList.remove('active');
   })
 }
 
@@ -155,13 +157,13 @@ function updateCart() {
     .reduce((total, dish) => total + dish.price * dish.quantity, 0)
     .toFixed(2)
 
-  cartElement.innerHTML = `
+    cartElement.innerHTML = `
     <ul>
       ${cartContents}
       <hr />
       <p>Total: € ${totalPrice}</p>
       <button id="checkout">Checkout</button>
-    </ul>`
+    </ul>`;
 
   // Add event listeners to the "Minus" buttons
   cartElement.querySelectorAll(".minus").forEach((button) => {
