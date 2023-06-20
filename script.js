@@ -100,25 +100,20 @@ searchForDish.addEventListener("click", searchItem);
 function searchItem(){
     const searchTerm = inputValue.value.toLowerCase(); 
     document.querySelectorAll(".card").forEach((card) => {
-      const dishName = card.querySelector("h3").textContent.toLowerCase(); 
-      if (dishName.includes(searchTerm)) {
+      const dishName = card.querySelector("h3").textContent.toLowerCase();
+      const dishCategory = card.querySelector(".cathegories li").textContent.toLowerCase();
+   
+      if (dishName.includes(searchTerm)||dishCategory.includes(searchTerm)) {
         card.style.display = ""; }
         else{
        card.style.display = "none";
       }
       inputValue.value = ""; 
-    });
-   
+    }
+    );
+    
   }
-
-
-//const searchForDish = document.querySelector("#searchO")
-//const inputValue = document.querySelector("#inputValue")
-//searchForDish.addEventListener("click", searchItem)
-//function searchItem() {
-//  console.log(inputValue.value)
-//}
-
+  
 ///////////// dark mode toggle ///////////////
 
 const darkModeSelect = document.getElementById("toggle-mode")
