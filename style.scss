@@ -177,12 +177,20 @@ li {
             color: $title-light;
           }
         }
-        ul li {
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: center;
+          li {
           border: none;
           padding: 0.4em 1em;
           border-radius: 10px;
           background: $bg-dark;
           color: $offwhite;
+          }
         }
       }
     }
