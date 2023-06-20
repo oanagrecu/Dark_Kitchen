@@ -20,11 +20,10 @@ $title-dark: #ffefdb;
 $text-dark: #81756e;
 $card-dark: #4e2c1c;
 
-
 // styling the footer
 .footer {
-    background-color: $card-light;
-    color: $title-light;
+    background-color: $card-dark;
+    color: $title-dark;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,18 +32,14 @@ $card-dark: #4e2c1c;
     width: 100%;
     padding: 1em 0 1em 0;
 }
-.footerelements {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .footerContainer {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em;
 }
 .links {
-    color: #742b26;
+    text-decoration: none;
+    color: $title-dark;
     font-size: 1.9rem;
     display: flex;
 }
@@ -54,17 +49,23 @@ $card-dark: #4e2c1c;
 }
 .text-dark {
     text-decoration: none;
-    color: #742b26;
+    color: $title-dark;
+    margin-left: 4px;
 }
 
 //////////dark theme ////
 .dark-theme {
-    background-color: #81756e;
-    color: #ffefdb;
-    #toggle-mode {
-        background-color: #ffefdb;
-        color: #81756e;
-    }
+    // #toggle-mode {
+    //     background-color: $title-dark;
+    //     color: $text-dark;
+    // }
+    // header {
+    //     background-color: $bg-dark;
+    //     color: $text-dark;
+    // }
+    // header .desktop h2 {
+    //     color: $text-dark;
+    // }
     .card {
         background-color: #4e2c1c;
         color: #ffefdb;
@@ -74,5 +75,5 @@ $card-dark: #4e2c1c;
     }
     .card-container .card .top-card .left h3 {
         color: $title-dark;
-    } 
+    }
 }
