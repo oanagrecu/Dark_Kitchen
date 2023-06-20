@@ -6,12 +6,12 @@
 
 // root
 :root {
-  --font-fraunces: 'Fraunces', serif;
-  --font-libre: 'Libre Franklin', sans-serif;
+  --font-fraunces: "Fraunces", serif;
+  --font-libre: "Libre Franklin", sans-serif;
 }
 
-$sans-serif: 'Libre Franklin';
-$serif: 'Fraunces';
+$sans-serif: "Libre Franklin";
+$serif: "Fraunces";
 $bg-light: #ffefdb;
 $title-light: #742b26;
 $text-light: #81756e;
@@ -196,17 +196,16 @@ li {
             border-radius: 10px;
             background: $bg-dark;
             color: $offwhite;
-            max-width: 50%;
-            li {
-              border: 1px solid $offwhite;
-              padding: 0.2em 0.4em;
-              margin: 0.2em;
-              border-radius: 10px;
+          max-width: 50%;
+          li {
+            border: 1px solid $offwhite;
+            padding: 0.2em 0.4em;
+            margin: 0.2em;
+            border-radius: 10px;
 
-              color: $offwhite;
-              align-self: start;
-              font-size: 0.8em;
-            }
+            color: $offwhite;
+            align-self: start;
+            font-size: 0.8em;
           }
         }
       }
@@ -275,5 +274,5 @@ li {
   }
 }
 // import mediaqueries
-@import 'mediaqueries';
-@import 'oanastyle';
+@import "mediaqueries";
+@import "oanastyle";
