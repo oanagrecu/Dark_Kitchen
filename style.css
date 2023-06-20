@@ -303,6 +303,46 @@ li {
   --font-fraunces: "Fraunces", serif;
   --font-libre: "Libre Franklin", sans-serif; }
 
+.footer {
+  background-color: #ffcc00;
+  color: #742b26;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 1em 0 1em 0;
+}
+
+.footerelements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.links {
+  color: #742b26;
+  font-size: 1.9rem;
+  display: flex;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+}
+
+.text-dark {
+  text-decoration: none;
+  color: #742b26;
+}
+
 .dark-theme {
   background-color: #81756e;
   color: #ffefdb; }

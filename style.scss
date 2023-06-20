@@ -6,12 +6,12 @@
 
 // root
 :root {
-  --font-fraunces: 'Fraunces', serif;
-  --font-libre: 'Libre Franklin', sans-serif;
+  --font-fraunces: "Fraunces", serif;
+  --font-libre: "Libre Franklin", sans-serif;
 }
 
-$sans-serif: 'Libre Franklin';
-$serif: 'Fraunces';
+$sans-serif: "Libre Franklin";
+$serif: "Fraunces";
 $bg-light: #ffefdb;
 $title-light: #742b26;
 $text-light: #81756e;
@@ -226,6 +226,12 @@ li {
           align-content: center;
           justify-content: space-evenly;
           align-items: center;
+          li {
+            border: none;
+            padding: 0.4em 1em;
+            border-radius: 10px;
+            background: $bg-dark;
+            color: $offwhite;
           max-width: 50%;
           li {
             border: 1px solid $offwhite;
@@ -331,5 +337,5 @@ li {
   }
 }
 // import mediaqueries
-@import 'mediaqueries';
-@import 'oanastyle';
+@import "mediaqueries";
+@import "oanastyle";
