@@ -58,14 +58,16 @@ function createDishCard(dish) {
   </div>
   <aside class="card-expander">
   <p class="description">
-    ${dish.description}  
+    ${dish.description} 
+      </p>
+      <div class="cat-rating">
     <ul class="cathegories">
     ${categoriesListItems}
     </ul>   
     <span>
       <i class="fa-solid fa-star"></i>${dish.rating}
       </span>
-  </p>
+ </div>
   </aside>
   `
   // Add event listener to the "Add to Cart" button
