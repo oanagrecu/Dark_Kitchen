@@ -34,6 +34,10 @@ $card-dark: #4e2c1c;
   border-radius: 10px;
   opacity: 0.9;
   cursor: pointer;
+  &:hover {
+    background: $offwhite;
+    color: $title-light;
+  }
 }
 
 html {
@@ -154,14 +158,25 @@ li {
   flex: 1 1 100%;
   width: 100%;
   color: $title-light;
+
   input {
     @include cat-button();
     padding: 0.4em 2em;
     opacity: 0.4;
+    width: 40%;
   }
   i {
     padding: 0.3em;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(116, 43, 38, 0.4);
+    align-self: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 10px;
+    margin-left: 0.4em;
   }
 }
 .card-container {
@@ -301,6 +316,7 @@ li {
   position: sticky;
   top: 0;
   width: 100%;
+  padding: 1em 3em 3em 3em;
 
   img {
     max-width: 50vw;
@@ -308,9 +324,9 @@ li {
     width: 100%;
     max-width: 50vw;
     height: auto;
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 10rem);
     object-fit: cover;
-    padding: 1em 3em 3em 3em;
+
     border-radius: 10px;
   }
   .big-description {
@@ -322,7 +338,14 @@ li {
     text-align: center;
   }
 }
-
+#tagline {
+  font-size: 5rem;
+  text-align: center;
+  line-height: 1.2em;
+  padding: 1.2em;
+  font-family: $serif;
+  color: #742b26;
+}
 .cathegories {
   align-self: start;
 }
@@ -331,8 +354,13 @@ li {
 }
 .price-expanded {
   display: none;
-  flex-flow: column wrap;
-  position: absolute;
+  // flex-flow: column wrap;
+  // display: flex;
+  flex-flow: row wrap;
+  position: fixed;
+  top: 0;
+  justify-content: space-around;
+
   padding: 1rem 2em;
   margin: 0;
   top: 0;
@@ -344,6 +372,9 @@ li {
   background: $card-light;
   border-radius: 10px;
   z-index: 9000;
+  transition-property: opacity, left, top, height, display;
+  transition-duration: 3s, 5s;
+  transition: 1s ease;
   h3 {
     font-size: 1.6em;
   }

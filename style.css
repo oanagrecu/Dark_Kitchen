@@ -6,12 +6,12 @@
 }
 
 :root {
-  --font-fraunces: "Fraunces", serif;
-  --font-libre: "Libre Franklin", sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-libre: 'Libre Franklin', sans-serif;
 }
 
 html {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
 }
 html h2 {
   border-radius: 50%;
@@ -24,7 +24,7 @@ body {
 }
 
 p {
-  font-family: "Libre Franklin";
+  font-family: 'Libre Franklin';
 }
 
 header {
@@ -47,7 +47,7 @@ header nav div h2 {
   padding-left: 0.4em;
 }
 header nav div button {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -56,6 +56,10 @@ header nav div button {
   border-radius: 10px;
   opacity: 0.9;
   cursor: pointer;
+}
+header nav div button:hover {
+  background: #ffefdb;
+  color: #742b26;
 }
 
 img {
@@ -76,7 +80,7 @@ body main .content {
 }
 body main .hero {
   width: calc(100vw - 4em);
-  background-image: url("assets/hero-image.jpg");
+  background-image: url('assets/hero-image.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -114,7 +118,7 @@ li {
   gap: 1em;
 }
 .categories ul li button {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -123,6 +127,10 @@ li {
   border-radius: 10px;
   opacity: 0.9;
   cursor: pointer;
+}
+.categories ul li button:hover {
+  background: #ffefdb;
+  color: #742b26;
 }
 
 .search-bar {
@@ -135,7 +143,7 @@ li {
   color: #742b26;
 }
 .search-bar input {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -146,10 +154,24 @@ li {
   cursor: pointer;
   padding: 0.4em 2em;
   opacity: 0.4;
+  width: 40%;
+}
+.search-bar input:hover {
+  background: #ffefdb;
+  color: #742b26;
 }
 .search-bar i {
   padding: 0.3em;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(116, 43, 38, 0.4);
+  align-self: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 10px;
+  margin-left: 0.4em;
 }
 
 .card-container {
@@ -176,7 +198,7 @@ li {
   gap: 1em;
 }
 .card-container .card p {
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   padding: 0 0.2em;
   color: #742b26;
   opacity: 0.8;
@@ -199,7 +221,7 @@ li {
   justify-content: space-between;
 }
 .card-container .card .top-card .right .price-item::before {
-  content: "€";
+  content: '€';
 }
 .card-container .card .top-card .right button {
   font-size: 1em;
@@ -212,7 +234,7 @@ li {
   color: #742b26;
   border-radius: 50%;
   border: none;
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   cursor: pointer;
 }
 .card-container .card .top-card .right button:hover {
@@ -259,7 +281,7 @@ li {
 }
 .cat-rating ul li {
   margin-right: 0.2em;
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   color: #ffefdb;
   padding: 0.4em;
   font-size: 0.8rem;
@@ -295,8 +317,7 @@ li {
   max-width: 50vw;
   height: auto;
   max-height: calc(100vh - 6rem);
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   padding: 1em 3em 3em 3em;
   border-radius: 10px;
 }
@@ -305,8 +326,17 @@ li {
   line-height: 1em;
   padding: 0.4em 2em;
   color: #742b26;
-  font-family: "Fraunces";
+  font-family: 'Fraunces';
   text-align: center;
+}
+
+#tagline {
+  font-size: 5rem;
+  text-align: center;
+  line-height: 1.2em;
+  padding: 1.2em;
+  font-family: 'Fraunces';
+  color: #742b26;
 }
 
 .cathegories {
@@ -319,8 +349,10 @@ li {
 
 .price-expanded {
   display: none;
-  flex-flow: column wrap;
-  position: absolute;
+  flex-flow: row wrap;
+  position: fixed;
+  top: 0;
+  justify-content: space-around;
   padding: 1rem 2em;
   margin: 0;
   top: 0;
@@ -343,7 +375,7 @@ li {
   padding: 2em 2em;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
   .card-container {
     width: 100%;
     flex: 1 1 100%;
@@ -351,6 +383,7 @@ li {
   .card-container .card {
     flex: 1 1 100%;
   }
+
   #side-view {
     display: none;
   }
@@ -363,6 +396,7 @@ li {
   .card-container .card {
     flex: 1 1 calc(50% - 6em);
   }
+
   #side-view {
     display: none;
   }
@@ -375,6 +409,7 @@ li {
   .card-container .card {
     flex: 1 1 30%;
   }
+
   #side-view {
     display: none;
   }
@@ -382,8 +417,8 @@ li {
 
 /* Dark Theme */
 :root {
-  --font-fraunces: "Fraunces", serif;
-  --font-libre: "Libre Franklin", sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --font-libre: 'Libre Franklin', sans-serif;
 }
 
 .footer {
@@ -443,4 +478,4 @@ li {
 }
 .dark-theme .card-container .card .top-card .left h3 {
   color: #ffefdb;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
