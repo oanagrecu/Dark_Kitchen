@@ -34,6 +34,10 @@ $card-dark: #4e2c1c;
   border-radius: 10px;
   opacity: 0.9;
   cursor: pointer;
+  &:hover {
+    background: $offwhite;
+    color: $title-light;
+  }
 }
 
 html {
@@ -301,6 +305,7 @@ li {
   position: sticky;
   top: 0;
   width: 100%;
+  padding: 1em 3em 3em 3em;
 
   img {
     max-width: 50vw;
@@ -308,9 +313,9 @@ li {
     width: 100%;
     max-width: 50vw;
     height: auto;
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 10rem);
     object-fit: cover;
-    padding: 1em 3em 3em 3em;
+
     border-radius: 10px;
   }
   .big-description {

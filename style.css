@@ -47,6 +47,9 @@ header {
         border-radius: 10px;
         opacity: 0.9;
         cursor: pointer; }
+        header nav div button:hover {
+          background: #ffefdb;
+          color: #742b26; }
 
 img {
   width: 100%;
@@ -105,6 +108,9 @@ li {
       border-radius: 10px;
       opacity: 0.9;
       cursor: pointer; }
+      .categories ul li button:hover {
+        background: #ffefdb;
+        color: #742b26; }
 
 .search-bar {
   display: flex;
@@ -126,6 +132,9 @@ li {
     cursor: pointer;
     padding: 0.4em 2em;
     opacity: 0.4; }
+    .search-bar input:hover {
+      background: #ffefdb;
+      color: #742b26; }
   .search-bar i {
     padding: 0.3em;
     cursor: pointer; }
@@ -233,6 +242,9 @@ li {
       opacity: 0.9;
       cursor: pointer;
       opacity: 0.9; }
+      .cat-rating ul li:hover {
+        background: #ffefdb;
+        color: #742b26; }
   .cat-rating span {
     color: #742b26;
     opacity: 0.9; }
@@ -247,16 +259,16 @@ li {
 #side-view {
   position: sticky;
   top: 0;
-  width: 100%; }
+  width: 100%;
+  padding: 1em 3em 3em 3em; }
   #side-view img {
     max-width: 50vw;
     height: auto;
     width: 100%;
     max-width: 50vw;
     height: auto;
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 10rem);
     object-fit: cover;
-    padding: 1em 3em 3em 3em;
     border-radius: 10px; }
   #side-view .big-description {
     font-size: 1.8em;
