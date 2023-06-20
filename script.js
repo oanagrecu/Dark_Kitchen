@@ -32,9 +32,7 @@ function handleData(data) {
     })
   })
 }
-// Array for the shopping cart
-let cart = []
-console.log(cart)
+
 ////create a card for each dish from data ////
 function createDishCard(dish) {
   const card = document.createElement("div")
@@ -70,9 +68,21 @@ function createDishCard(dish) {
   </aside>
   `
   // Add event listener to the "Add to Cart" button
-  card
-    .querySelector(".price-item , .add-to-cart")
-    .addEventListener("click", () => {
+
+  
+
+card.querySelector(".price-item").addEventListener("click", () => {
+    card.addEventListener("click", () => {
+      const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id)
+      if (!isDishInCart) {
+        cart.push(dish)
+        updateCart()
+      }
+    })
+  return card})
+
+card.querySelector(".add-to-cart").addEventListener("click", () => {
+   card.addEventListener("click", () => {
       const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id)
       if (!isDishInCart) {
         cart.push(dish)
@@ -80,7 +90,13 @@ function createDishCard(dish) {
       }
     })
   return card
+})
 }
+
+
+
+
+ 
 
 ////functionality for cart ////
 let basket = document.getElementsByClassName("fa-cart-shopping")[0]
@@ -95,74 +111,75 @@ closeBtnCart.addEventListener("click", function () {
 ///desktop navbar update ////
 
 const desktopNav = () => {
-    let desktopButtonsNav = document.createElement("div")
-    desktopButtonsNav.classList.add("desktop-buttons")
-    desktopButtonsNav.innerHTML = `
-    <button id="toggle-mode">DARK</button>
-    <span>Last Item <span class="last-item"> € ${dish.price} </span></span>
-    <h2>Total<span class="total"> € ${cart
-      .reduce((total, dish) => total + dish.price, 0)
-      .toFixed(2)}</span></h2>
-      <i class="fa-solid fa-cart-shopping"></i>       
-         <div class="price-expanded">
-            <h3>Your order</h3>
-            <i class="fa-regular fa-circle-xmark"></i>
-            <p>Nothing in your cart yet
-              Go back and add stuff!
-            </p>
-            </div>`
-   let navbarDesktop = document.getElementById("desktop")
-    navbarDesktop.appendChild(desktopNav)
-} 
+  let desktopButtonsNav = document.createElement("div")
+  desktopButtonsNav.classList.add("desktop-buttons")
+  let lastItemPrice = cart.length > 0 ? cart[cart.length - 1].price : 0;
+  desktopButtonsNav.innerHTML = `
+  <button id="toggle-mode">DARK</button>
+  <span>Last Item <span class="last-item"> € ${lastItemPrice} </span></span>
+  <h2>Total<span class="total"> € ${cart
+    .reduce((total, dish) => total + dish.price * dish.quantity, 0)
+    .toFixed(2)}</span></h2>
+    <i class="fa-solid fa-cart-shopping"></i>       
+       <div class="price-expanded">
+          <h3>Your order</h3>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <p>Nothing in your cart yet
+            Go back and add stuff!
+          </p>
+          </div>`
+ let navbarDesktop = document.getElementById("desktop")
+  navbarDesktop.appendChild(desktopButtonsNav)
+}
+
+// Array for the shopping cart
+let cart = []
 
 
-// Update the cart display
+card.querySelector(".add-to-cart").addEventListener("click", () => {
+  const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id)
+  if (!isDishInCart) {
+      dish.quantity = 1; // set initial quantity to 1
+      cart.push(dish)
+      updateCart()
+  }
+})
+
+
+/////update the cart////////
 function updateCart() {
   const cartElement = document.getElementById("cart")
   cartElement.innerHTML = `
- ${cart
-   .map(
-     (dish, index) => `
-    <div class="price-expanded">
-      <h3>Your order</h3>
-      <i class="fa-regular fa-circle-xmark"></i>
-      <ul>
-        <li>
-        <p>${dish.name}: <span class="price-item"> $${dish.price}</span></p>
-          <span class="minus" data-index="${index}"> - </span>
-          <span class="plus" data-index="${index}"> + </span>
-        </li>    `
-   )
-   .join("")}
-        <hr />
-        <p>Total: $${cart
-          .reduce((total, dish) => total + dish.price, 0)
-          .toFixed(2)}</p>
-        <button id="checkout">Checkout</button>
-        </ul>
-    </div>
+      <div class="price-expanded">
+          <h3>Your order</h3>
+          <i class="fa-regular fa-circle-xmark"></i>
+          <ul>
+          ${cart.map((dish, index) => `
+              <li>
+                  <p>${dish.name} (x${dish.quantity}): <span class="price-item"> $${dish.price}</span></p>
+                  <span class="minus" data-index="${index}"> - </span>
+                  <span class="plus" data-index="${index}"> + </span>
+              </li>    
+          `).join("")}
+          </ul>
+          <hr />
+          <p>Total: $${cart.reduce((total, dish) => total + (dish.price * dish.quantity), 0).toFixed(2)}</p>
+          <button id="checkout">Checkout</button>
+      </div>
   `
-  // Add event listeners to the "Minus" buttons
-  cartElement.querySelectorAll(".minus").forEach((button) => {
-    button.addEventListener("click", () => {
-      const index = parseInt(button.dataset.index, 10)
-      if (cart[index].quantity > 1) {
-        cart[index].quantity--
-      } else {
-        cart.splice(index, 1)
-      }
-      updateCart()
-    })
-  })
+  card.querySelector(".add-to-cart").addEventListener("click", () => {
+    const isDishInCart = cart.some((cartDish) => cartDish.id === dish.id)
+    if (!isDishInCart) {
+        dish.quantity = 1; // set initial quantity to 1
+        cart.push(dish)
+        updateCart()
+    } else {
+        const index = cart.findIndex((cartDish) => cartDish.id === dish.id)
+        cart[index].quantity++
+        updateCart()
+    }
+})
 
-  // Add event listeners to the "Plus" buttons
-  cartElement.querySelectorAll(".plus").forEach((button) => {
-    button.addEventListener("click", () => {
-      const index = parseInt(button.dataset.index, 10)
-      cart[index].quantity++
-      updateCart()
-    })
-  })
 
   // Add event listener to the "Checkout" button
   cartElement.querySelector("#checkout").addEventListener("click", () => {
@@ -172,104 +189,13 @@ function updateCart() {
       updateCart()
     } else {
       alert("Your cart is empty.")
-    }
-  })
+    } desktopNav()
+ })
+desktopNav() // update the navbar after updating the cart
 }
-//////functionality for cart ////
-//let basket = document.getElementsByClassName("fa-cart-shopping")[0]
-//basket.addEventListener("click", function () {
-//  document.getElementsByClassName("price-expanded")[0].style.display = "flex"
-//})
-//let closeBtnCart = document.getElementsByClassName("fa-circle-xmark")[0]
-//closeBtnCart.addEventListener("click", function () {
-//  document.getElementsByClassName("price-expanded")[0].style.display = "none"
-//})
-
-/////desktop navbar update ////
-
-//const desktopNav = () => {
-//    let desktopButtonsNav = document.createElement("div")
-//    desktopButtonsNav.classList.add("desktop-buttons")
-//    desktopButtonsNav.innerHTML = `
-//    <button id="toggle-mode">DARK</button>
-//    <span>Last Item <span class="last-item"> € ${dish.price} </span></span>
-//    <h2>Total<span class="total"> € ${cart
-//      .reduce((total, dish) => total + dish.price, 0)
-//      .toFixed(2)}</span></h2>
-//      <i class="fa-solid fa-cart-shopping"></i>       
-//         <div class="price-expanded">
-//            <h3>Your order</h3>
-//            <i class="fa-regular fa-circle-xmark"></i>
-//            <p>Nothing in your cart yet
-//              Go back and add stuff!
-//            </p>
-//            </div>`
-//   let navbarDesktop = document.getElementById("desktop")
-//    navbarDesktop.appendChild(desktopNav)
-//} 
 
 
-//// Update the cart display
-//function updateCart() {
-//  const cartElement = document.getElementById("cart")
-//  cartElement.innerHTML = `
-// ${cart
-//   .map(
-//     (dish, index) => `
-//    <div class="price-expanded">
-//      <h3>Your order</h3>
-//      <i class="fa-regular fa-circle-xmark"></i>
-//      <ul>
-//        <li>
-//        <p>${dish.name}: <span class="price-item"> $${dish.price}</span></p>
-//          <span class="minus" data-index="${index}"> - </span>
-//          <span class="plus" data-index="${index}"> + </span>
-//        </li>    `
-//   )
-//   .join("")}
-//        <hr />
-//        <p>Total: $${cart
-//          .reduce((total, dish) => total + dish.price, 0)
-//          .toFixed(2)}</p>
-//        <button id="checkout">Checkout</button>
-//        </ul>
-//    </div>
-//  `
-//  // Add event listeners to the "Minus" buttons
-//  cartElement.querySelectorAll(".minus").forEach((button) => {
-//    button.addEventListener("click", () => {
-//      const index = parseInt(button.dataset.index, 10)
-//      if (cart[index].quantity > 1) {
-//        cart[index].quantity--
-//      } else {
-//        cart.splice(index, 1)
-//      }
-//      updateCart()
-//    })
-//  })
-
-//  // Add event listeners to the "Plus" buttons
-//  cartElement.querySelectorAll(".plus").forEach((button) => {
-//    button.addEventListener("click", () => {
-//      const index = parseInt(button.dataset.index, 10)
-//      cart[index].quantity++
-//      updateCart()
-//    })
-//  })
-
-//  // Add event listener to the "Checkout" button
-//  cartElement.querySelector("#checkout").addEventListener("click", () => {
-//    if (cart.length > 0) {
-//      alert("Thank you for your order!")
-//      cart = []
-//      updateCart()
-//    } else {
-//      alert("Your cart is empty.")
-//    }
-//  })
-//}
-
-///getting the dishes from the data////
+/////////getting the dishes from the data////////
 function getCategories(dishes) {
   let categories = new Set()
   dishes.forEach((dish) =>
@@ -285,6 +211,13 @@ function createCategoryFilter(category) {
   li.appendChild(button)
   return li.outerHTML
 }
+
+const dishes = // get your dishes data from somewhere
+dishes.forEach(dish => createDishCard(dish))
+desktopNav()
+
+
+
 //////// search bar functionality /////
 const searchForDish = document.querySelector("#searchO")
 searchForDish.addEventListener("click", searchItem)
