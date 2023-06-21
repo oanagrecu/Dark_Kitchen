@@ -339,6 +339,11 @@ li {
     .price-expanded ul li .price-item {
       padding: 2em 2em; }
 
+#cart {
+  font-family: "Fraunces"; }
+  #cart p {
+    font-family: "Fraunces"; }
+
 .active {
   visibility: visible;
   opacity: 1; }
