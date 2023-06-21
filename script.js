@@ -200,19 +200,20 @@ function updateCart() {
 }
 
 function updateNavbar() {
-  const lastItemElement = document.querySelector(".last-item")
-  const totalElement = document.querySelector(".total")
-  const cartItemCountElement = document.querySelector(".cart-item-count")
+  const lastItemElement = document.querySelector(".last-item");
+  const totalElement = document.querySelector("h2 .total");
+  const cartItemCountElement = document.querySelector(".cart-item-count");
 
   const totalPrice = cart
-    .reduce((total, dish) => total + dish.price, 0)
-    .toFixed(2)
-  const lastItem = cart[cart.length - 1]
+    .reduce((total, dish) => total + dish.price * dish.quantity, 0)
+    .toFixed(2);
+  const lastItem = cart[cart.length - 1];
 
-  lastItemElement.textContent = `€ ${lastItem ? lastItem.price : 0.0}`
-  totalElement.textContent = `€ ${totalPrice}`
-  cartItemCountElement.textContent = cart.length
+  lastItemElement.textContent = `€ ${lastItem ? lastItem.price : 0.0}`;
+  totalElement.textContent = `€ ${totalPrice}`;
+  cartItemCountElement.textContent = cart.reduce((total, dish) => total + dish.quantity, 0);
 }
+
 
 // Call desktopNav function once when the script is loaded
 desktopNav()
