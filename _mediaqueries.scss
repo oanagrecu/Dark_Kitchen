@@ -14,10 +14,14 @@
   #side-view {
     display: none;
   }
+
+  .price-expanded {
+    max-width: 50vw;
+  }
 }
 /// comment
 // Extra small devices (phones, 800px and down) _/
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   body main .hero h1 {
     text-align: center;
   }
@@ -31,6 +35,12 @@
     }
   }
   #side-view {
+    display: none;
+  }
+  .price-expanded {
+    max-width: 100vw;
+  }
+  .desktop-buttons > span:first-of-type {
     display: none;
   }
 }
@@ -58,6 +68,10 @@
     }
   }
   #side-view {
+    display: none;
+  }
+  .desktop-buttons span,
+  .desktop-buttons h2 {
     display: none;
   }
 }
