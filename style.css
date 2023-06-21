@@ -25,7 +25,7 @@ p {
   font-family: "Libre Franklin"; }
 
 header {
-  padding: 1em;
+  padding: 0.5em 1em;
   font-size: 1.6em; }
   header nav {
     display: flex;
@@ -342,6 +342,9 @@ li {
     font-size: 1.6em; }
   .price-expanded ul {
     padding: 2em 0; }
+
+.desktop-buttons > h2 {
+  margin-top: 0.4em; }
 
 #cart {
   width: 100%;
