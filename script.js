@@ -133,8 +133,9 @@ const desktopNav = () => {
   navbarDesktop.appendChild(desktopButtonsNav)
 }
 
-let cart = [] // Define cart as an empty array at the beginning
-console.log(cart)
+// Define cart as an empty array at the beginning
+let cart = [] 
+//// update the cart with the changes ///
 function updateCart() {
   const cartElement = document.getElementById("cart")
   // Display the cart contents
