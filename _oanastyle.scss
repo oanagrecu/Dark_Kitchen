@@ -84,6 +84,14 @@ $card-dark: #4e2c1c;
     #tagline {
         color: #ffefdb;
     }
+    .price-expanded {
+        background-color: #4e2c1c;
+        color: #ffefdb;
+    }
+    header nav div button {
+        background-color: #ffefdb;
+        color: #4e2c1c;
+    }
 }
 .footer {
     background-color: $card-dark;
@@ -94,12 +102,12 @@ $card-dark: #4e2c1c;
     align-items: center;
     font-size: 1.6rem;
     width: 100%;
-    padding: 1em 0 1em 0;
+    padding: 0.8em 0 0.8em 0;
 }
 .footerContainer {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 0.7em;
 }
 .links {
     text-decoration: none;
