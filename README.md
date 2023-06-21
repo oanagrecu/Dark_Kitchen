@@ -4,7 +4,7 @@
 
 This is a dynamic single-page restaurant menu application, built as part of the BeCode challenges. The application is designed for a Dark Kitchen online delivery service and includes a list of dishes that users can order online.
 
-The team working on this project includes Oana, Louis, Florentina and Athi.
+The team working on this project includes Oana, Louis and Florentina.
 
 ## Features
 
