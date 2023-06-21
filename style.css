@@ -370,6 +370,11 @@ li {
     font-size: 1.2em;
     font-weight: bold; }
 
+#checkout {
+  margin: 1em 0;
+  width: 100%;
+  height: 3em; }
+
 .active {
   visibility: visible;
   opacity: 1; }
