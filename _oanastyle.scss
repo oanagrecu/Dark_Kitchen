@@ -22,27 +22,42 @@ $card-dark: #4e2c1c;
 
 //////////dark theme ////
 .dark-theme {
+    main {
+        background-color: #81756e;
+    }
     header {
         background-color: #81756e;
     }
-
+    header #desktop h2 {
+        color: #4e2c1c;
+    }
     header .desktop-button h2 {
-        color: $card-dark;
+        color: #4e2c1c;
     }
     .card {
         background-color: #4e2c1c;
+        color: #ffefdb;
     }
     h1 {
         color: #ffefdb;
     }
     .card-container .card .top-card .left h3 {
-        color: $title-dark;
+        color: #ffefdb;
     }
     .card-container .card .top-card .left .price-item {
         color: #ffefdb;
     }
     .content .search-bar #inputValue {
         background-color: #4e2c1c;
+    }
+    .card-container .card p {
+        color: #ffefdb;
+    }
+    .cat-rating span {
+        color: #ffefdb;
+    }
+    .card-container .card .top-card .right button {
+        color: #ffefdb;
     }
 }
 .footer {

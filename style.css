@@ -32,34 +32,40 @@ p {
 
 header {
   padding: 0.5em 1em;
-  font-size: 1.6em; }
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    color: #742b26; }
-    header nav div {
-      display: flex;
-      font-size: 1.6rem;
-      align-items: center;
-      margin-top: -0.4em; }
-      header nav div span,
-      header nav div h2 {
-        font-size: 1.2rem;
-        padding-left: 0.4em; }
-      header nav div button {
-        font-family: "Fraunces";
-        color: #ffefdb;
-        padding: 0.4em;
-        font-size: 0.8rem;
-        background: #742b26;
-        border: none;
-        border-radius: 10px;
-        opacity: 0.9;
-        cursor: pointer;
-        margin: 0 0.4em; }
-        header nav div button:hover {
-          background: #ffefdb;
-          color: #742b26; }
+  font-size: 1.6em;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  color: #742b26;
+}
+header nav div {
+  display: flex;
+  font-size: 1.6rem;
+  align-items: center;
+  margin-top: -0.4em;
+}
+header nav div span,
+header nav div h2 {
+  font-size: 1.2rem;
+  padding-left: 0.4em;
+}
+header nav div button {
+  font-family: "Fraunces";
+  color: #ffefdb;
+  padding: 0.4em;
+  font-size: 0.8rem;
+  background: #742b26;
+  border: none;
+  border-radius: 10px;
+  opacity: 0.9;
+  cursor: pointer;
+  margin: 0 0.4em;
+}
+header nav div button:hover {
+  background: #ffefdb;
+  color: #742b26;
+}
 
 img {
   width: 100%;
@@ -396,10 +402,8 @@ li {
 }
 
 .desktop-buttons > h2 {
-  margin-top: 0.4em; }
-
-.desktop-buttons > h2 {
-  margin-top: 0.4em; }
+  margin-top: 0.4em;
+}
 
 #cart {
   width: 100%;
@@ -434,12 +438,8 @@ li {
 #checkout {
   margin: 1em 0;
   width: 100%;
-  height: 3em; }
-
-#checkout {
-  margin: 1em 0;
-  width: 100%;
-  height: 3em; }
+  height: 3em;
+}
 
 .active {
   visibility: visible;
@@ -517,14 +517,21 @@ li {
   --font-libre: "Libre Franklin", sans-serif;
 }
 
+.dark-theme main {
+  background-color: #81756e;
+}
 .dark-theme header {
   background-color: #81756e;
+}
+.dark-theme header #desktop h2 {
+  color: #4e2c1c;
 }
 .dark-theme header .desktop-button h2 {
   color: #4e2c1c;
 }
 .dark-theme .card {
   background-color: #4e2c1c;
+  color: #ffefdb;
 }
 .dark-theme h1 {
   color: #ffefdb;
@@ -533,6 +540,18 @@ li {
   color: #ffefdb;
 }
 .dark-theme .card-container .card .top-card .left .price-item {
+  color: #ffefdb;
+}
+.dark-theme .content .search-bar #inputValue {
+  background-color: #4e2c1c;
+}
+.dark-theme .card-container .card p {
+  color: #ffefdb;
+}
+.dark-theme .cat-rating span {
+  color: #ffefdb;
+}
+.dark-theme .card-container .card .top-card .right button {
   color: #ffefdb;
 }
 
