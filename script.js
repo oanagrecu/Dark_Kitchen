@@ -236,22 +236,42 @@ function createCategoryFilter(category) {
 }
 
 //////// search bar functionality /////
-const searchForDish = document.querySelector("#searchO")
-searchForDish.addEventListener("click", searchItem)
+const searchForDish = document.querySelector("#searchO");
+const inputValue = document.querySelector("#inputValue");
+const searchResultMessage = document.querySelector("#searchResultMessage");
+
+searchForDish.addEventListener("click", searchItem);
+inputValue.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    searchItem();
+  }
+});
+
 function searchItem() {
-  const searchTerm = inputValue.value.toLowerCase()
+  const searchTerm = inputValue.value.toLowerCase();
+  let dishFound = false;
+
   document.querySelectorAll(".card").forEach((card) => {
-    const dishName = card.querySelector("h3").textContent.toLowerCase()
+    const dishName = card.querySelector("h3").textContent.toLowerCase();
     const dishCategory = card
       .querySelector(".cathegories li")
-      .textContent.toLowerCase()
+      .textContent.toLowerCase();
     if (dishName.includes(searchTerm) || dishCategory.includes(searchTerm)) {
-      card.style.display = ""
+      card.style.display = "";
+      dishFound = true;
     } else {
-      card.style.display = "none"
+      card.style.display = "none";
     }
-    inputValue.value = ""
-  })
+    inputValue.value = "";
+  });
+
+  if (dishFound) {
+    searchResultMessage.style.display = "none";
+  } else {
+    searchResultMessage.style.display = "";
+  }
+
+  inputValue.value = "";
 }
 ///////////// dark mode toggle ///////////////
 const darkModeSelect = document.getElementById("toggle-mode")
