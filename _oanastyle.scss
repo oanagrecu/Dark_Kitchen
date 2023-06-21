@@ -28,12 +28,17 @@ $card-dark: #4e2c1c;
     header {
         background-color: #81756e;
     }
-    header #desktop h2 {
-        color: #4e2c1c;
+    header nav {
+        color: #ffefdb;
     }
+    html h2 {
+        border-bottom: #ffefdb;
+    }
+
     header .desktop-button h2 {
-        color: #4e2c1c;
+        color: #ffefdb;
     }
+
     .card {
         background-color: #4e2c1c;
         color: #ffefdb;
@@ -48,7 +53,11 @@ $card-dark: #4e2c1c;
         color: #ffefdb;
     }
     .content .search-bar #inputValue {
-        background-color: #4e2c1c;
+        background-color: #ffefdb;
+        color: #4e2c1c;
+    }
+    .search-bar i {
+        background-color: #ffefdb;
     }
     .card-container .card p {
         color: #ffefdb;
@@ -59,7 +68,20 @@ $card-dark: #4e2c1c;
     .card-container .card .top-card .right button {
         color: #ffefdb;
     }
+    .cat-rating ul li {
+        background-color: #ffefdb;
+        color: #4e2c1c;
+    }
 }
+.categories ul li button {
+    background-color: #ffefdb;
+    color: #4e2c1c;
+}
+#toggle-mode {
+    background-color: #ffefdb;
+    color: #4e2c1c;
+}
+
 .footer {
     background-color: $card-dark;
     color: $title-dark;
