@@ -367,13 +367,11 @@ li {
 }
 .price-expanded {
   visibility: hidden;
-  // visibility: visible;
-
   flex-flow: row wrap;
   position: fixed;
   top: 0;
   justify-content: space-around;
-
+  align-content: flex-start;
   padding: 1rem 2em;
   margin: 0;
   top: 0;
@@ -394,19 +392,31 @@ li {
   }
   ul {
     padding: 2em 0;
-    li {
-      .price-item {
-        padding: 2em 2em;
-      }
-    }
   }
 }
 
 #cart {
+  hr {
+    margin: 1em;
+    color: $title-light;
+  }
   p {
     font-family: $serif;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    span {
+      align-self: center;
+    }
   }
   font-family: $serif;
+  .minus,
+  .plus {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  cursor: pointer;
 }
 
 .active {

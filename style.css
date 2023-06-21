@@ -319,6 +319,7 @@ li {
   position: fixed;
   top: 0;
   justify-content: space-around;
+  align-content: flex-start;
   padding: 1rem 2em;
   margin: 0;
   top: 0;
@@ -336,13 +337,25 @@ li {
     font-size: 1.6em; }
   .price-expanded ul {
     padding: 2em 0; }
-    .price-expanded ul li .price-item {
-      padding: 2em 2em; }
 
 #cart {
-  font-family: "Fraunces"; }
+  font-family: "Fraunces";
+  cursor: pointer; }
+  #cart hr {
+    margin: 1em;
+    color: #742b26; }
   #cart p {
-    font-family: "Fraunces"; }
+    font-family: "Fraunces";
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    #cart p span {
+      align-self: center; }
+  #cart .minus,
+  #cart .plus {
+    font-size: 1.2em;
+    font-weight: bold; }
 
 .active {
   visibility: visible;
@@ -396,9 +409,13 @@ li {
   #side-view {
     display: none; }
 
-  .desktop-buttons span,
-  .desktop-buttons h2 {
-    display: none; } }
+  .desktop-buttons > span,
+  .desktop-buttons > h2 {
+    display: none; }
+
+  #cart p,
+  #cart span {
+    font-size: 0.8em; } }
 /*# sourceMappingURL=style.css.map */
 /* Dark Theme */
 :root {

@@ -70,8 +70,12 @@
   #side-view {
     display: none;
   }
-  .desktop-buttons span,
-  .desktop-buttons h2 {
+  .desktop-buttons > span,
+  .desktop-buttons > h2 {
     display: none;
+  }
+  #cart p,
+  #cart span {
+    font-size: 0.8em;
   }
 }
