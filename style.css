@@ -523,11 +523,14 @@ li {
 .dark-theme header {
   background-color: #81756e;
 }
-.dark-theme header #desktop h2 {
-  color: #4e2c1c;
+.dark-theme header nav {
+  color: #ffefdb;
+}
+.dark-theme html h2 {
+  border-bottom: #ffefdb;
 }
 .dark-theme header .desktop-button h2 {
-  color: #4e2c1c;
+  color: #ffefdb;
 }
 .dark-theme .card {
   background-color: #4e2c1c;
@@ -543,7 +546,11 @@ li {
   color: #ffefdb;
 }
 .dark-theme .content .search-bar #inputValue {
-  background-color: #4e2c1c;
+  background-color: #ffefdb;
+  color: #4e2c1c;
+}
+.dark-theme .search-bar i {
+  background-color: #ffefdb;
 }
 .dark-theme .card-container .card p {
   color: #ffefdb;
@@ -553,6 +560,20 @@ li {
 }
 .dark-theme .card-container .card .top-card .right button {
   color: #ffefdb;
+}
+.dark-theme .cat-rating ul li {
+  background-color: #ffefdb;
+  color: #4e2c1c;
+}
+
+.categories ul li button {
+  background-color: #ffefdb;
+  color: #4e2c1c;
+}
+
+#toggle-mode {
+  background-color: #ffefdb;
+  color: #4e2c1c;
 }
 
 .footer {
