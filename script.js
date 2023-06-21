@@ -49,7 +49,7 @@ function createDishCard(dish) {
       <img class="product-shot" src="${dish.picture}" alt="preview menu item" />
     </div>
     <div class="right">
-      <button class="price-item">${dish.price}</button>
+      <button class="price-item">${dish.price.toFixed(2)}</button>
       <button class="add-to-cart">Add to cart</button>
     </div>
   </div>
@@ -153,10 +153,7 @@ function updateCart() {
 </li>`
     )
     .join("")
-  console.log(cartElement)
-  let totalPrice = cart
-    .reduce((total, dish) => total + dish.price * dish.quantity, 0)
-    .toFixed(2)
+    let totalPrice = cart.reduce((total, dish) => total + dish.price * dish.quantity, 0).toFixed(2)
 
     cartElement.innerHTML = `
     <ul>
@@ -205,9 +202,7 @@ function updateNavbar() {
   const totalElement = document.querySelector("h2 .total");
   const cartItemCountElement = document.querySelector(".cart-item-count");
 
-  const totalPrice = cart
-    .reduce((total, dish) => total + dish.price * dish.quantity, 0)
-    .toFixed(2);
+  const totalPrice = cart.reduce((total, dish) => total + dish.price * dish.quantity, 0).toFixed(2);
   const lastItem = cart[cart.length - 1];
 
   lastItemElement.textContent = `€ ${lastItem ? lastItem.price : 0.0}`;
