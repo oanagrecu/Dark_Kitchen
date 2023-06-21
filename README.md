@@ -4,7 +4,7 @@
 
 This is a dynamic single-page restaurant menu application, built as part of the BeCode challenges. The application is designed for a Dark Kitchen online delivery service and includes a list of dishes that users can order online.
 
-The team working on this project includes Oana, Louis, and Florentina.
+The team working on this project includes Oana, Louis, Florentina and Athi.
 
 ## Features
 
@@ -20,7 +20,7 @@ The team working on this project includes Oana, Louis, and Florentina.
 - CSS
 - JavaScript
 
-## Live : -to be added
+## Live : [fergalicious Restaurant](https://fergalicious.netlify.app/ )
 ## Preview:
 
 ![Alt text](assets/preview.png)
