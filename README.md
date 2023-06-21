@@ -21,6 +21,7 @@ The team working on this project includes Oana, Louis and Florentina.
 - JavaScript
 
 ## Live : [fergalicious Restaurant](https://fergalicious.netlify.app/ )
-## Preview:
+
+## Preview
 
 ![Alt text](assets/preview.png)

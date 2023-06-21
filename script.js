@@ -49,7 +49,7 @@ function createDishCard(dish) {
       <img class="product-shot" src="${dish.picture}" alt="preview menu item" />
     </div>
     <div class="right">
-      <button class="price-item">${dish.price}</button>
+      <button class="price-item">${dish.price.toFixed(2)}</button>
       <button class="add-to-cart">Add to cart</button>
     </div>
   </div>
@@ -101,13 +101,13 @@ window.onload = function () {
   ////functionality for cart ////
   let basket = document.getElementsByClassName("fa-cart-shopping")[0]
   basket.addEventListener("click", function () {
-    document.getElementsByClassName('price-expanded')[0].classList.add('active');
+    document.getElementsByClassName("price-expanded")[0].classList.add("active")
   })
   let closeBtnCart = document.getElementsByClassName("fa-circle-xmark")[0]
   closeBtnCart.addEventListener("click", function () {
     document
-    .getElementsByClassName('price-expanded')[0]
-    .classList.remove('active');
+      .getElementsByClassName("price-expanded")[0]
+      .classList.remove("active")
   })
 }
 
@@ -134,7 +134,7 @@ const desktopNav = () => {
 }
 
 // Define cart as an empty array at the beginning
-let cart = [] 
+let cart = []
 //// update the cart with the changes ///
 function updateCart() {
   const cartElement = document.getElementById("cart")
@@ -153,18 +153,17 @@ function updateCart() {
 </li>`
     )
     .join("")
-  console.log(cartElement)
   let totalPrice = cart
     .reduce((total, dish) => total + dish.price * dish.quantity, 0)
     .toFixed(2)
 
-    cartElement.innerHTML = `
+  cartElement.innerHTML = `
     <ul>
       ${cartContents}
       <hr />
       <p>Total: € ${totalPrice}</p>
       <button id="checkout">Checkout</button>
-    </ul>`;
+    </ul>`
 
   // Add event listeners to the "Minus" buttons
   cartElement.querySelectorAll(".minus").forEach((button) => {
@@ -194,6 +193,7 @@ function updateCart() {
       alert("Thank you for your order! We are currently preparing it")
       cart = []
       updateCart()
+  
     } else {
       alert("Please add dishes to your basket.")
     }
@@ -201,20 +201,22 @@ function updateCart() {
 }
 
 function updateNavbar() {
-  const lastItemElement = document.querySelector(".last-item");
-  const totalElement = document.querySelector("h2 .total");
-  const cartItemCountElement = document.querySelector(".cart-item-count");
+  const lastItemElement = document.querySelector(".last-item")
+  const totalElement = document.querySelector("h2 .total")
+  const cartItemCountElement = document.querySelector(".cart-item-count")
 
   const totalPrice = cart
     .reduce((total, dish) => total + dish.price * dish.quantity, 0)
-    .toFixed(2);
-  const lastItem = cart[cart.length - 1];
+    .toFixed(2)
+  const lastItem = cart[cart.length - 1]
 
-  lastItemElement.textContent = `€ ${lastItem ? lastItem.price : 0.0}`;
-  totalElement.textContent = `€ ${totalPrice}`;
-  cartItemCountElement.textContent = cart.reduce((total, dish) => total + dish.quantity, 0);
+  lastItemElement.textContent = `€ ${lastItem ? lastItem.price : 0.0}`
+  totalElement.textContent = `€ ${totalPrice}`
+  cartItemCountElement.textContent = cart.reduce(
+    (total, dish) => total + dish.quantity,
+    0
+  )
 }
-
 
 // Call desktopNav function once when the script is loaded
 desktopNav()
@@ -237,42 +239,39 @@ function createCategoryFilter(category) {
 }
 
 //////// search bar functionality /////
-const searchForDish = document.querySelector("#searchO");
-const inputValue = document.querySelector("#inputValue");
-const searchResultMessage = document.querySelector("#searchResultMessage");
+const searchForDish = document.querySelector("#searchO")
+const inputValue = document.querySelector("#inputValue")
+const searchResultMessage = document.querySelector("#searchResultMessage")
 
-searchForDish.addEventListener("click", searchItem);
+searchForDish.addEventListener("click", searchItem)
 inputValue.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
-    searchItem();
+    searchItem()
   }
-});
+})
 
 function searchItem() {
-  const searchTerm = inputValue.value.toLowerCase();
-  let dishFound = false;
+  const searchTerm = inputValue.value.toLowerCase()
+  let dishFound = false
 
   document.querySelectorAll(".card").forEach((card) => {
-    const dishName = card.querySelector("h3").textContent.toLowerCase();
+    const dishName = card.querySelector("h3").textContent.toLowerCase()
     const dishCategory = card
       .querySelector(".cathegories li")
-      .textContent.toLowerCase();
+      .textContent.toLowerCase()
     if (dishName.includes(searchTerm) || dishCategory.includes(searchTerm)) {
-      card.style.display = "";
-      dishFound = true;
+      card.style.display = ""
+      dishFound = true
     } else {
-      card.style.display = "none";
+      card.style.display = "none"
     }
-    inputValue.value = "";
-  });
+    inputValue.value = ""
+  })
 
-  if (dishFound) {
-    searchResultMessage.style.display = "none";
-  } else {
-    searchResultMessage.style.display = "The dish id not in our menu!";
+  if (!dishFound) {
+    alert("The dish is not in our menu!")
   }
-
-  inputValue.value = "";
+  inputValue.value = ""
 }
 ///////////// dark mode toggle ///////////////
 const darkModeSelect = document.getElementById("toggle-mode")
