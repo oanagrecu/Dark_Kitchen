@@ -163,8 +163,13 @@ li {
   input {
     @include cat-button();
     padding: 0.4em 2em;
-    opacity: 0.4;
+    opacity: 0.6;
     width: 40%;
+    &:hover {
+      background: $title-light;
+      color: $offwhite;
+      opacity: 0.8;
+    }
   }
   i {
     padding: 0.3em;

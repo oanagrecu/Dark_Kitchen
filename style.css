@@ -132,11 +132,15 @@ li {
     opacity: 0.9;
     cursor: pointer;
     padding: 0.4em 2em;
-    opacity: 0.4;
+    opacity: 0.6;
     width: 40%; }
     .search-bar input:hover {
       background: #ffefdb;
       color: #742b26; }
+    .search-bar input:hover {
+      background: #742b26;
+      color: #ffefdb;
+      opacity: 0.8; }
   .search-bar i {
     padding: 0.3em;
     cursor: pointer;
