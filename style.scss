@@ -49,6 +49,10 @@ html {
     padding-bottom: 0.4em;
     border-bottom: 2px solid $title-light;
   }
+
+  i {
+    cursor: pointer;
+  }
 }
 body {
   background: -webkit-linear-gradient(
@@ -75,7 +79,7 @@ header {
     div {
       display: flex;
       font-size: 1.6rem;
-      align-items: flex-start;
+      align-items: center;
 
       span,
       h2 {
@@ -367,13 +371,11 @@ li {
 }
 .price-expanded {
   visibility: hidden;
-  // visibility: visible;
-
   flex-flow: row wrap;
   position: fixed;
   top: 0;
-  justify-content: space-around;
-
+  justify-content: center;
+  align-content: flex-start;
   padding: 1rem 2em;
   margin: 0;
   top: 0;
@@ -388,18 +390,48 @@ li {
   opacity: 0;
   z-index: 9000;
   transition: visibility 0.3s linear, opacity 0.3s linear;
+  .fa-circle-xmark {
+    font-size: 2rem;
+    padding-left: 2em;
+  }
 
   h3 {
     font-size: 1.6em;
   }
   ul {
     padding: 2em 0;
-    li {
-      .price-item {
-        padding: 2em 2em;
-      }
+  }
+}
+
+#cart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  > p {
+    padding: 2em;
+  }
+  hr {
+    margin: 1em;
+    color: $title-light;
+  }
+  p {
+    font-family: $serif;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    span {
+      align-self: center;
     }
   }
+  font-family: $serif;
+  .minus,
+  .plus {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  cursor: pointer;
 }
 
 .active {
