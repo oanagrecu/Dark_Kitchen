@@ -12,15 +12,39 @@ $bg-light: #ffefdb;
 $title-light: #742b26;
 $text-light: #81756e;
 $card-light: #ffcc00;
-
 $offwhite: #ffefdb;
-
 $bg-dark: #81756e;
 $title-dark: #ffefdb;
 $text-dark: #81756e;
 $card-dark: #4e2c1c;
 
 // styling the footer
+
+//////////dark theme ////
+.dark-theme {
+    header {
+        background-color: #81756e;
+    }
+
+    header .desktop-button h2 {
+        color: $card-dark;
+    }
+    .card {
+        background-color: #4e2c1c;
+    }
+    h1 {
+        color: #ffefdb;
+    }
+    .card-container .card .top-card .left h3 {
+        color: $title-dark;
+    }
+    .card-container .card .top-card .left .price-item {
+        color: #ffefdb;
+    }
+    .content .search-bar #inputValue {
+        background-color: #4e2c1c;
+    }
+}
 .footer {
     background-color: $card-dark;
     color: $title-dark;
@@ -51,30 +75,4 @@ $card-dark: #4e2c1c;
     text-decoration: none;
     color: $title-dark;
     margin-left: 4px;
-}
-
-//////////dark theme ////
-.dark-theme {
-    // body:
-    // #toggle-mode {
-    //     background-color: $title-light;
-    //     color: $text-light;
-    // }
-    // header {
-    //     background-color: $bg-light;
-    //     color: $text-dark;
-    // }
-    header .desktop h2 {
-        color: $card-dark;
-    }
-    .card {
-        background-color: #4e2c1c;
-        color: #ffefdb;
-    }
-    h1 {
-        color: #ffefdb;
-    }
-    .card-container .card .top-card .left h3 {
-        color: $title-dark;
-    }
 }

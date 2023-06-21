@@ -269,7 +269,7 @@ function searchItem() {
   if (dishFound) {
     searchResultMessage.style.display = "none";
   } else {
-    searchResultMessage.style.display = "";
+    searchResultMessage.style.display = "The dish was not found!";
   }
 
   inputValue.value = "";
