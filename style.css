@@ -14,6 +14,8 @@ html {
     border-radius: 50%;
     padding-bottom: 0.4em;
     border-bottom: 2px solid #742b26; }
+  html i {
+    cursor: pointer; }
 
 body {
   background: -webkit-linear-gradient(0deg, #fff2bc, #ffe2be);
@@ -32,7 +34,7 @@ header {
     header nav div {
       display: flex;
       font-size: 1.6rem;
-      align-items: flex-start; }
+      align-items: center; }
       header nav div span,
       header nav div h2 {
         font-size: 1.2rem;
@@ -318,7 +320,7 @@ li {
   flex-flow: row wrap;
   position: fixed;
   top: 0;
-  justify-content: space-around;
+  justify-content: center;
   align-content: flex-start;
   padding: 1rem 2em;
   margin: 0;
@@ -333,14 +335,22 @@ li {
   opacity: 0;
   z-index: 9000;
   transition: visibility 0.3s linear, opacity 0.3s linear; }
+  .price-expanded .fa-circle-xmark {
+    font-size: 2rem;
+    padding-left: 2em; }
   .price-expanded h3 {
     font-size: 1.6em; }
   .price-expanded ul {
     padding: 2em 0; }
 
 #cart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
   font-family: "Fraunces";
   cursor: pointer; }
+  #cart > p {
+    padding: 2em; }
   #cart hr {
     margin: 1em;
     color: #742b26; }
