@@ -20,7 +20,8 @@ The team working on this project includes Oana, Louis and Florentina.
 - CSS
 - JavaScript
 
-## Live : [fergalicious Restaurant](https://fergalicious.netlify.app/ );
-## Preview:
+## Live : [fergalicious Restaurant](https://fergalicious.netlify.app/ )
+
+## Preview
 
 ![Alt text](assets/preview.png)

@@ -193,6 +193,7 @@ function updateCart() {
       alert("Thank you for your order! We are currently preparing it")
       cart = []
       updateCart()
+  
     } else {
       alert("Please add dishes to your basket.")
     }
