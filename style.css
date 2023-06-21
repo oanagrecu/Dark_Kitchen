@@ -34,7 +34,8 @@ header {
     header nav div {
       display: flex;
       font-size: 1.6rem;
-      align-items: center; }
+      align-items: center;
+      margin-top: -0.4em; }
       header nav div span,
       header nav div h2 {
         font-size: 1.2rem;
