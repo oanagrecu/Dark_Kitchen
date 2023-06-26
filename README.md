@@ -16,8 +16,8 @@ The team working on this project includes Oana, Louis and Florentina.
 
 ## Technologies Used
 
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 
 ## Live : [fergalicious Restaurant](https://fergalicious.netlify.app/ )
